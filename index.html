@@ -323,11 +323,13 @@ footer{background:var(--night);color:#fff;margin-top:70px;padding:64px 0 34px}
 .mnav .mcta{margin-top:22px;border:0;background:var(--brand-deep);color:#fff;border-radius:100px;font-size:16px;padding:15px;text-align:center;cursor:pointer}
 @media(max-width:980px){ .menu-btn{display:block} .nav .cta{display:none} }
 @media(max-width:560px){
-  .hero-visual{height:400px}
-  .phone{width:222px}
+  .hero-visual{height:452px;display:flex;align-items:center;justify-content:center}
+  .phone{width:214px}
   .phone.back{display:none}
-  .phone.front{transform:translate(0,-2px) rotate(-2deg)}
-  .coin.c1{left:12px;bottom:58px} .coin.c2{right:14px;top:26px} .coin.c3{display:none}
+  .phone.front{position:relative;transform:scale(.92) rotate(-2deg)}
+  .devices{position:static}
+  .blob,.orbit,.orbit.two{display:none}
+  .coin.c1{left:6px;bottom:70px} .coin.c2{right:8px;top:40px} .coin.c3{display:none}
 }
 </style>
 </head>
