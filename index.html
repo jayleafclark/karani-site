@@ -246,16 +246,16 @@ footer{background:var(--night);color:#fff;margin-top:70px;padding:64px 0 34px}
 /* ---------- responsive ---------- */
 @media(max-width:980px){
   .hero-grid{grid-template-columns:1fr;gap:0}
-  .hero-visual{height:450px;order:-1;margin-bottom:10px;overflow:hidden}
-  .phone{width:230px}
-  .phone.front{transform:translate(-58px,-6px) rotate(-2deg)}
-  .phone.back{transform:translate(70px,22px) rotate(3deg)}
-  .orbit{width:380px;height:380px}
-  .orbit.two{width:292px;height:292px}
-  .blob{width:330px;height:330px;top:6px}
-  .coin.c1{left:2px;bottom:64px;width:50px;height:50px}
-  .coin.c2{right:8px;top:24px}
-  .coin.c3{right:6px;bottom:12px}
+  .hero-visual{height:420px;order:-1;margin-bottom:4px;overflow:hidden}
+  .phone{width:198px}
+  .phone.front{transform:translate(-42px,-4px) rotate(-2deg)}
+  .phone.back{transform:translate(50px,18px) rotate(3deg)}
+  .orbit{width:320px;height:320px}
+  .orbit.two{width:244px;height:244px}
+  .blob{width:284px;height:284px;top:8px}
+  .coin.c1{left:8px;bottom:52px;width:42px;height:42px}
+  .coin.c2{right:12px;top:16px;width:42px;height:42px}
+  .coin.c3{right:16px;bottom:8px;width:32px;height:32px}
   h1.hero-h{font-size:48px}
   .sec-head,.dash-grid{grid-template-columns:1fr;gap:24px}
   .dash-grid{gap:36px}
@@ -315,13 +315,20 @@ footer{background:var(--night);color:#fff;margin-top:70px;padding:64px 0 34px}
 /* ---- mobile menu ---- */
 .menu-btn{display:none;background:none;border:0;cursor:pointer;padding:6px;color:var(--ink)}
 .menu-btn svg{width:28px;height:28px;stroke-width:2}
-.mnav{position:fixed;inset:0;z-index:120;background:var(--cream);transform:translateX(100%);transition:transform .32s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column;padding:74px 30px 34px;overflow:auto}
-.mnav.open{transform:none}
+.mnav{position:fixed;inset:0;z-index:120;background:var(--cream);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .28s ease,visibility .28s ease;display:flex;flex-direction:column;padding:74px 30px 34px;overflow:auto}
+.mnav.open{opacity:1;visibility:visible;pointer-events:auto}
 .mnav .mclose{position:absolute;top:18px;right:22px;width:40px;height:40px;border:0;background:#fff;border-radius:50%;box-shadow:var(--shadow-card);display:grid;place-items:center;cursor:pointer;color:var(--ink2)}
 .mnav .mclose svg{width:18px;height:18px}
 .mnav a,.mnav .mcta{font-family:var(--display);font-weight:600;font-size:25px;color:var(--ink);padding:15px 0;text-align:left;border-bottom:1px solid var(--line);text-decoration:none;display:block;width:100%;background:none}
 .mnav .mcta{margin-top:22px;border:0;background:var(--brand-deep);color:#fff;border-radius:100px;font-size:16px;padding:15px;text-align:center;cursor:pointer}
 @media(max-width:980px){ .menu-btn{display:block} .nav .cta{display:none} }
+@media(max-width:560px){
+  .hero-visual{height:400px}
+  .phone{width:222px}
+  .phone.back{display:none}
+  .phone.front{transform:translate(0,-2px) rotate(-2deg)}
+  .coin.c1{left:12px;bottom:58px} .coin.c2{right:14px;top:26px} .coin.c3{display:none}
+}
 </style>
 </head>
 <body>
