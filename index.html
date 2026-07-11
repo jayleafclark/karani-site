@@ -297,6 +297,19 @@ footer{background:var(--night);color:#fff;margin-top:70px;padding:64px 0 34px}
   .strip-grid{grid-template-columns:repeat(2,1fr);gap:28px}
   .foot-grid{grid-template-columns:1fr 1fr}
   .navlinks{display:none}
+  /* ---- TIER 1: calm the motion on mobile ---- */
+  /* paint text-dense / secondary blocks instantly instead of the universal slide-in reveal */
+  .sitem.reveal, .fcard.reveal, .ncard.reveal, .strip-grid .reveal, .dash-copy .reveal, .faq .reveal{
+    opacity:1 !important; transform:none !important; transition:none !important;
+  }
+  /* revealed blocks we keep (hero + the one dashboard feature moment): shorten to ~0.4s */
+  .hero-copy .reveal, .shot-frame.reveal{
+    transition:opacity .4s cubic-bezier(.2,.7,.2,1),transform .4s cubic-bezier(.2,.7,.2,1) !important;
+  }
+  /* zero the JS stagger delays (single-column on mobile = slow vertical drip) */
+  .feat-grid .reveal, .num-grid .reveal, .strip-grid .reveal{ transition-delay:0s !important; }
+  /* kill looping animations: shotZoom drift AND the infinite livePulse "breathing" dot */
+  .shot-frame img, .shot-tag .dot{ animation:none !important; }
 }
 @media(max-width:560px){
   .wrap{padding:0 22px}
