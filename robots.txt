@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /profile.html
+Disallow: /dashboard.html
+Sitemap: https://karanimarkets.com/sitemap.xml
