@@ -85,13 +85,14 @@ def nav(navy, active=""):
       '<a href="/blog.html"'+cls("blog")+'>Blog</a>'
       '</nav>'
       '<div class="cta"><a class="btn btn-ghost navlogin" href="/profile.html">Client login</a>'
-      '<button class="btn btn-brand" data-modal="signup">Get Started '+ARROW+'</button></div>'
+      '<button class="btn btn-brand" data-modal="signup">Request access '+ARROW+'</button></div>'
+      '<button class="btn btn-brand navpill" data-modal="signup">Request access</button>'
       '<button class="menu-btn" aria-label="Open menu" onclick="openNav()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>'
       '</div></header>'
       '<div class="mnav" id="mnav" aria-hidden="true">'
       '<button class="mclose" aria-label="Close menu" onclick="closeNav()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>'
       '<a href="/">Home</a><a href="/how-it-works.html">How it works</a><a href="/safety.html">Safety</a><a href="/platform.html">Dashboard</a><a href="/blog.html">Blog</a>'
-      '<a href="/profile.html">Client login</a><a href="/profile.html" onclick="closeNav()">Download the app</a>'
+      '<a href="/profile.html">Client login</a>'
       '<button class="mcta" data-modal="signup" onclick="closeNav()">Request access</button></div>')
 
 def footer(cream):
