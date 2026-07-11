@@ -52,6 +52,20 @@ HYPE = [
     "life-changing","life changing",
 ]
 
+# Weasel adverbs + slop superlatives + filler (HARD). These are banned in Karani copy
+# too (the trading-vocab collisions like system/hold/position/pause/calm are what we
+# deliberately DON'T ban; these have no such excuse).
+BANNED = [
+    # weasel adverbs (the "quietly beat you" AI tell) + slop superlatives + filler.
+    # Deliberately EXCLUDES trading-legit words: quiet/loud (quiet market), overwhelm
+    # (buyers overwhelmed sellers), system, hold, position, pause, calm, spiral.
+    "quietly", "secretly", "subtly", "effortlessly", "effortless", "flawless",
+    "flawlessly", "seamless", "seamlessly", "genuinely", "clarity", "rewire",
+    "rewired", "rewiring", "stillness", "profound", "profoundly", "incredible",
+    "incredibly", "remarkable", "remarkably", "staggering", "extraordinary",
+    "stunning", "breathtaking", "unparalleled", "meticulously",
+]
+
 # Leftover assistant chatter.
 LLM_LEAK = [
     "as an ai language model","as a language model","as an ai model","as an ai,",
@@ -103,6 +117,8 @@ def scan(text, is_html=True):
         hits.append(("ai-lexicon", m.group(0)))
     for m in _wb(HYPE).finditer(t):
         hits.append(("hype/compliance", m.group(0)))
+    for m in _wb(BANNED).finditer(t):
+        hits.append(("banned-word", m.group(0)))
     for p in AI_PHRASES:
         if p in low:
             hits.append(("ai-phrase", p))
