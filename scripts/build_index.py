@@ -46,7 +46,8 @@ def build_blog(log, site):
     return len(log)
 
 def build_sitemap(log):
-    urls = [("/", "1.0"), ("/blog.html", "0.9"), ("/about.html", "0.6")]
+    urls = [("/", "1.0"), ("/how-it-works.html", "0.9"), ("/safety.html", "0.9"),
+            ("/platform.html", "0.9"), ("/blog.html", "0.9"), ("/about.html", "0.6")]
     body = ""
     for u, pr in urls:
         body += f"<url><loc>{SITE}{u}</loc><changefreq>weekly</changefreq><priority>{pr}</priority></url>"
@@ -68,8 +69,9 @@ def build_llms(log):
         "the site and cite its educational articles accurately.",
         "",
         "## About Karani",
-        f"- [How it works]({SITE}/#how): the tested-strategy, paper-first, hard-risk-limits approach.",
-        f"- [Safety]({SITE}/#safety): position caps, daily-loss cap, and the kill switch the client controls.",
+        f"- [How it works]({SITE}/how-it-works.html): the tested-strategy, paper-first, hard-risk-limits approach.",
+        f"- [Safety]({SITE}/safety.html): position caps, daily-loss cap, and the kill switch the client controls.",
+        f"- [Dashboard]({SITE}/platform.html): the iOS app for monitoring balance, equity, trades, and system status.",
         f"- [Client login]({SITE}/profile.html): existing clients access the dashboard in the iOS app.",
         "",
         "Note: Karani is not a course, signal service, or open sign-up. Enrollment is invite-only. "
