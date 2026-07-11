@@ -30,8 +30,7 @@
       letter-spacing:.24em; text-transform:uppercase; color:rgba(19,38,48,.55); }
   .spin{ margin:1.6rem auto 0; width:26px; height:26px; border:2px solid rgba(19,38,48,.15);
       border-top-color:var(--terra); border-radius:50%; animation:sp .8s linear infinite; }
-  .fallback{ margin-top:1.3rem; font-family:'Space Mono',monospace; font-size:.72rem;
-      color:rgba(19,38,48,.5); }
+  .fallback{ margin-top:1.3rem; font-family:'Space Mono',monospace; font-size:.72rem; color:rgba(19,38,48,.5); }
   .fallback a{ color:var(--terra); }
   @keyframes drA{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(6vmax,4vmax) scale(1.08)}}
   @keyframes drB{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-5vmax,-4vmax) scale(1.1)}}
@@ -45,16 +44,16 @@
     <div class="word">Karani<span>.</span></div>
     <div class="eyebrow">Client Access</div>
     <div class="spin" role="status" aria-label="Connecting"></div>
-    <div class="fallback">Taking you to your dashboard… <a id="manual" href="https://app.karanimarkets.com/">continue&nbsp;&rarr;</a></div>
+    <div class="fallback">Opening secure sign in… <a id="manual" href="https://app.karanimarkets.com/sign-in">continue&nbsp;&rarr;</a></div>
   </div>
 <script>
-  // Prefer the branded custom domain; fall back to the Railway URL until its TLS
-  // cert finishes issuing. A cert-not-ready host makes fetch() reject, which is
-  // our signal to fall back — so this is never broken and auto-upgrades.
-  var CUSTOM="https://app.karanimarkets.com/", FALLBACK="https://app-production-8dc0.up.railway.app/";
+  // Route STRAIGHT to the branded Clerk sign-in (no landing page in between).
+  // Prefer the custom domain; fall back to the Railway URL until its TLS cert
+  // finishes issuing (a cert-not-ready host makes fetch() reject = our signal).
+  var CUSTOM="https://app.karanimarkets.com/", FALLBACK="https://app-production-8dc0.up.railway.app/", PATH="sign-in";
   var done=false;
-  function go(u){ if(done)return; done=true; location.replace(u); }
-  document.getElementById('manual').setAttribute('href', CUSTOM);
+  function go(base){ if(done)return; done=true; location.replace(base+PATH); }
+  document.getElementById('manual').setAttribute('href', CUSTOM+PATH);
   var t=setTimeout(function(){ go(FALLBACK); }, 3000);
   try{
     fetch(CUSTOM+"api/health",{mode:"no-cors",cache:"no-store"})
