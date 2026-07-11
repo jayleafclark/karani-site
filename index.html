@@ -320,9 +320,7 @@ footer{background:var(--night);color:#fff;margin-top:70px;padding:64px 0 34px}
   .hero-cta .btn-brand{flex:0 0 auto}
   .watch{flex:0 0 auto}
   .trust-strip{margin-top:24px;gap:8px}
-  .feat-grid{grid-template-columns:1fr}
   .strip-grid{grid-template-columns:1fr}
-  .foot-grid{grid-template-columns:1fr}
   h2.sh,.dash-copy h2{font-size:30px}
   /* --- mobile-first polish (phones) --- */
   .sec{padding:44px 0}
@@ -355,6 +353,34 @@ footer{background:var(--night);color:#fff;margin-top:70px;padding:64px 0 34px}
   .navlogin{padding:12px 18px}
   /* strip items breathe */
   .strip-grid{gap:18px;padding:30px 0}
+
+  /* --- TIER 2: compress footer (was ~948px, a full screen) --- */
+  footer{margin-top:40px;padding:40px 0 24px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:20px 24px;padding-bottom:28px}
+  .fcol a{padding:4px 0;font-size:14px}
+  .foot-bottom{padding-top:18px}
+  /* Product column merely duplicates the mobile nav (How it works / Safety / Dashboard / Blog) */
+  .foot-grid .fcol:nth-of-type(2){display:none}
+
+  /* --- TIER 2: cap the hero phone mockup + tighten hero band --- */
+  .hero{padding:26px 0 22px}
+  .hero-app .kapp .kframe{width:230px}
+
+  /* --- TIER 2: de-card the home feat-grid (2x2, lighter chrome) --- */
+  .feat-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .fcard{padding:16px 15px;border-radius:16px}
+  .fcard .fic{width:34px;height:34px}
+  .fcard h3{font-size:15.5px;margin-bottom:5px}
+  .fcard p{font-size:12.5px;line-height:1.5}
+
+  /* --- TIER 2: kill duplicated home sections --- */
+  /* bottom trust-strip: its novel facts (Rithmic/AMP, Databento) appear in #dashboard + safety */
+  .strip{display:none}
+  /* #how num-grid: keep only the middle "Discipline, automated -> How it works" link-out */
+  #how .num-grid .ncard:nth-child(1),
+  #how .num-grid .ncard:nth-child(3){display:none}
+  /* #dashboard browser-frame: the hero mockup already showed the app; keep feature list + CTA */
+  #dashboard .shot-frame{display:none}
 }
 
 /* ---------- interactive helpers ---------- */
@@ -581,7 +607,7 @@ footer{background:var(--night);color:#fff;margin-top:70px;padding:64px 0 34px}
 @media(max-width:980px){
   .hero-app{display:inline-block;margin:6px auto 0}
   .hero-visual .devices,.hero-visual .blob,.hero-visual .orbit,.hero-visual .coin{display:none!important}
-  .hero-visual{height:auto!important;background:none!important;padding:0!important;margin-top:30px!important}
+  .hero-visual{height:auto!important;background:none!important;padding:0!important;margin-top:14px!important}
 }
 @media(max-width:980px) and (prefers-reduced-motion:no-preference){
   .hero-app .kframe{animation:kappRise .7s cubic-bezier(.2,.7,.2,1) both}
