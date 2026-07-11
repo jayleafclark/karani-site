@@ -36,19 +36,13 @@ STYLE = """<style>
 
 def main():
     s = T.load_site()
-    desktop = ('<div class="login-desktop">'
-      '<div class="eyebrow" style="text-align:center;margin-bottom:10px">Client login</div>'
-      '<h1 style="font-family:var(--display);font-weight:600;font-size:34px;text-align:center;letter-spacing:-.01em;margin-bottom:6px">Welcome back</h1>'
-      '<p style="text-align:center;color:var(--ink2);font-size:15px;margin-bottom:24px">Sign in to your Karani dashboard.</p>'
-      '<form class="lcard" onsubmit="location.href=\'/dashboard.html#app\';return false">'
-      '<label>Email</label><input type="email" required placeholder="you@example.com" autocomplete="email">'
-      '<label>Password</label><input type="password" required placeholder="Your password" autocomplete="current-password">'
-      '<div class="fp"><a href="#" onclick="return false">Forgot password?</a></div>'
-      '<button type="submit" class="btn btn-brand lbtn">Sign in ' + T.ARROW + '</button>'
-      '<div class="ldiv">or</div>'
-      '<a href="/dashboard.html#app" class="btn btn-ghost lgoog"><svg width="17" height="17" viewBox="0 0 48 48"><path fill="#4285F4" d="M45 24c0-1.5-.1-3-.4-4.4H24v8.4h11.8c-.5 2.7-2 5-4.4 6.6v5.5h7.1C42.7 36.3 45 30.7 45 24z"/><path fill="#34A853" d="M24 46c6 0 11-2 14.5-5.4l-7.1-5.5c-2 1.3-4.5 2.1-7.4 2.1-5.7 0-10.5-3.8-12.2-9H4.5v5.7C8 40.9 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.8 28.2c-.4-1.3-.7-2.7-.7-4.2s.3-2.9.7-4.2v-5.7H4.5C3 17 2 20.4 2 24s1 7 2.5 9.9l7.3-5.7z"/><path fill="#EA4335" d="M24 10.8c3.2 0 6.1 1.1 8.4 3.3l6.3-6.3C35 4.3 30 2 24 2 15.4 2 8 7.1 4.5 14.1l7.3 5.7c1.7-5.2 6.5-9 12.2-9z"/></svg>Continue with Google</a>'
-      '</form>'
-      '<p class="lnote">New to Karani? Access is invitation only. <a data-modal="signup">Request access</a></p>'
+    # On desktop we send clients to the real animated dashboard login (dashboard.html).
+    # This block is only a graceful fallback if the head redirect script did not run.
+    desktop = ('<div class="login-desktop" style="text-align:center;padding-top:44px">'
+      '<div class="eyebrow" style="margin-bottom:10px">Client login</div>'
+      '<h1 style="font-family:var(--display);font-weight:600;font-size:32px;letter-spacing:-.01em;margin-bottom:10px">Opening your dashboard</h1>'
+      '<p style="color:var(--ink2);font-size:15px;margin-bottom:22px">Taking you to the Karani dashboard login.</p>'
+      '<a href="/dashboard.html" class="btn btn-brand" style="justify-content:center;display:inline-flex">Continue to dashboard ' + T.ARROW + '</a>'
       '</div>')
 
     mobile = ('<div class="login-mobile">'
@@ -63,7 +57,9 @@ def main():
       '<p class="lnote">Not a client yet? Access is invitation only. <a data-modal="signup">Request access</a></p>'
       '</div>')
 
-    head = (T.DOCTOP + '<title>Client login — Karani</title>'
+    head = (T.DOCTOP
+      + '<script>if(window.matchMedia("(min-width:561px)").matches){location.replace("/dashboard.html")}</script>'
+      + '<title>Client login</title>'
       '<meta name="description" content="Sign in to your Karani dashboard.">'
       '<meta name="robots" content="noindex">'
       '<link rel="canonical" href="' + SITE + '/profile.html">'
