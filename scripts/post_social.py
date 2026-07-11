@@ -63,7 +63,7 @@ def main():
     if not api_key or not profile:
         print("social posting not configured (no UPLOADPOST_API_KEY / KARANI_UPLOADPOST_PROFILE); skipping")
         return 0
-    platforms = [p.strip() for p in os.environ.get("KARANI_SOCIAL_PLATFORMS", "x,linkedin").split(",") if p.strip()]
+    platforms = [p.strip() for p in os.environ.get("KARANI_SOCIAL_PLATFORMS", "x,linkedin,facebook,instagram").split(",") if p.strip()]
     if not os.path.exists(LOG):
         print("no log.json; nothing to post"); return 0
     log = json.load(open(LOG, encoding="utf-8"))
