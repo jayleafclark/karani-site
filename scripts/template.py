@@ -96,7 +96,7 @@ def footer(cream):
       '<div class="foot-brand"><div class="bb"><img src="'+cream+'" alt="Karani"><b>Karani</b></div>'
       '<p>A disciplined, automated trading system for the S&amp;P 500 futures, built to run hands-off, with you in control.</p></div>'
       '<div class="fcol"><h5>Product</h5><a href="/#how">How it works</a><a href="/#safety">Safety</a><a href="/#dashboard">Dashboard</a><a href="/blog.html">Blog</a></div>'
-      '<div class="fcol"><h5>Company</h5><a href="#" data-modal="about">About</a><a href="#" data-modal="pricing">Pricing</a><a href="#" data-modal="contact">Contact</a></div>'
+      '<div class="fcol"><h5>Company</h5><a href="/about.html">About</a><a href="#" data-modal="pricing">Pricing</a><a href="#" data-modal="contact">Contact</a></div>'
       '<div class="fcol"><h5>Account</h5><a href="/profile.html">Client login</a><a href="#" data-modal="signup">Request access</a></div>'
       '</div><div class="foot-bottom">'
       '<p class="disc">Trading futures involves substantial risk of loss and is not suitable for every investor. Nothing here is financial advice. Past performance is not indicative of future results.</p>'
