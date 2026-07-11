@@ -99,6 +99,20 @@ PAGECSS = """
 .spec p{margin:0;font-size:14.5px;color:var(--ink2);line-height:1.58}
 .callout{border-left:3px solid var(--brand);padding:4px 0 4px 22px;margin:24px 0;
   font-family:var(--display);font-weight:500;font-size:20px;color:var(--brand-deep);line-height:1.42}
+.page .shot-frame{margin:22px 0 10px}
+.page figure{margin:26px 0 12px}
+.page figure figcaption{margin-top:12px;font-size:13.5px;color:var(--ink3);text-align:center;line-height:1.5}
+.shot-frame img.shotshow{display:none}
+.vizwrap{margin:24px 0 8px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px 24px 22px;box-shadow:var(--shadow-card);position:relative;overflow:hidden}
+.vizscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.vizwrap svg{width:100%;height:auto;display:block}
+.vizwrap figcaption{margin-top:14px;font-size:13.5px;color:var(--ink3);text-align:center;line-height:1.5}
+.vizwrap:before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 88% 6%,rgba(111,147,172,.08),transparent 60%);pointer-events:none;border-radius:20px}
+@media(max-width:640px){
+  .shot-frame img.shotshow{display:block}.shot-frame img.shothide{display:none}
+  .vizwrap{padding:18px 12px 16px}
+  .vizwrap .vizscroll svg{width:560px;min-width:560px}
+}
 .crumbs{max-width:760px;margin:0 auto;font-size:13px;color:var(--ink3);padding-top:6px}
 .crumbs a{color:var(--ink3);text-decoration:none}
 .crumbs a:hover{color:var(--brand-deep)}
@@ -153,6 +167,123 @@ IC = {
 def spec(icon, h, p):
     return f'<div class="spec"><div class="sic">{IC[icon]}</div><h3>{h}</h3><p>{p}</p></div>'
 
+# ---- page-specific inline SVG visuals (self-contained, on-brand) --------
+
+# SAFETY: "every order passes through four gates" — a shield made of stacked
+# layers, an order dot travelling through each check before it reaches the market.
+SAFETY_SVG = '''<figure class="vizwrap reveal" aria-label="Diagram: every order is checked against four risk controls before it reaches the market">
+<div class="vizscroll">
+<svg viewBox="0 0 720 300" role="img" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="sg" x1="0" y1="0" x2="1" y2="1">
+   <stop offset="0" stop-color="#6F93AC"/><stop offset="1" stop-color="#2C4757"/>
+  </linearGradient>
+  <linearGradient id="track" x1="0" y1="0" x2="1" y2="0">
+   <stop offset="0" stop-color="#CE8168"/><stop offset="1" stop-color="#6F93AC"/>
+  </linearGradient>
+ </defs>
+ <!-- source -->
+ <g>
+  <rect x="14" y="118" width="96" height="64" rx="16" fill="#fff" stroke="rgba(59,50,41,.14)"/>
+  <text x="62" y="146" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3B3229">Strategy</text>
+  <text x="62" y="164" text-anchor="middle" font-size="11" fill="#8a7f72">wants to trade</text>
+ </g>
+ <!-- track -->
+ <path d="M110 150 H600" fill="none" stroke="url(#track)" stroke-width="2.5" stroke-dasharray="2 7" stroke-linecap="round" opacity=".55"/>
+ <!-- four gates -->
+ <g>
+  <!-- gate template -->
+'''
+# gate columns
+_gates = [
+  ("Position cap","max contracts"),
+  ("Daily-loss cap","dollar floor"),
+  ("Kill switch","your one tap"),
+  ("Paper-proven","tested first"),
+]
+for i,(gl,gs) in enumerate(_gates):
+    x = 168 + i*112
+    SAFETY_SVG += (
+      f'<g>'
+      f'<rect x="{x-42}" y="66" width="84" height="168" rx="18" fill="#FBEEE7" stroke="rgba(206,129,104,.32)"/>'
+      f'<rect x="{x-42}" y="66" width="84" height="168" rx="18" fill="url(#sg)" opacity="{0.05+i*0.015:.3f}"/>'
+      f'<circle cx="{x}" cy="104" r="17" fill="#fff" stroke="rgba(85,119,144,.35)"/>'
+      f'<path d="M{x-7} 104 l5 5 9 -10" fill="none" stroke="#4f8a6b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>'
+      f'<text x="{x}" y="168" text-anchor="middle" font-size="12" font-weight="700" fill="#2C4757">{gl}</text>'
+      f'<text x="{x}" y="186" text-anchor="middle" font-size="10.5" fill="#8a7f72">{gs}</text>'
+      f'</g>'
+    )
+SAFETY_SVG += '''
+ </g>
+ <!-- travelling order dot -->
+ <circle r="7" fill="#CE8168">
+  <animateMotion dur="4.2s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear" path="M110 150 H600"/>
+  <animate attributeName="opacity" values="0;1;1;1;0" dur="4.2s" repeatCount="indefinite"/>
+ </circle>
+ <!-- market -->
+ <g>
+  <rect x="606" y="112" width="100" height="76" rx="18" fill="url(#sg)"/>
+  <text x="656" y="144" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Market</text>
+  <text x="656" y="164" text-anchor="middle" font-size="10.5" fill="rgba(255,255,255,.72)">order sent</text>
+ </g>
+ <text x="360" y="270" text-anchor="middle" font-size="12.5" fill="#8a7f72">Every order clears all four checks before it can reach the CME. If any fails, the order is stopped.</text>
+</svg>
+</div>
+<figcaption>How a Karani order is checked: it must pass the position cap, the daily-loss cap, the kill switch, and paper testing before it reaches the market.</figcaption>
+</figure>'''
+
+# HOW IT WORKS: the pipeline a strategy travels — tested rules -> paper ->
+# live -> hard limits -> dashboard. Five nodes on a connecting rail, with a
+# small equity spark to make it feel like real trading data.
+_how_nodes = [
+  ("chart","Tested edge","~9 yrs of ES data"),
+  ("phone","Paper first","live market, no risk"),
+  ("bolt","Live orders","AMP over Rithmic"),
+  ("shield","Hard limits","caps on every order"),
+  ("gauge","Your dashboard","watch from the app"),
+]
+def _mini_icon(kind, cx, cy):
+    # tiny 22px stroke glyphs centred at cx,cy, brand-deep stroke
+    s = 'fill="none" stroke="#557790" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"'
+    g = {
+      "chart": f'<path d="M{cx-8} {cy-8}v16h16" {s}/><path d="M{cx-5} {cy+4}l4 -4 3 3 5 -6" {s}/>',
+      "phone": f'<rect x="{cx-6}" y="{cy-9}" width="12" height="18" rx="3" {s}/><path d="M{cx-1} {cy+6}h2" {s}/>',
+      "bolt":  f'<path d="M{cx+1} {cy-9}l-8 10h6l-2 8 8 -10h-6z" {s}/>',
+      "shield":f'<path d="M{cx} {cy-9}l7 3v5c0 4 -3 6.5 -7 7.5c-4 -1 -7 -3.5 -7 -7.5v-5z" {s}/><path d="M{cx-3} {cy}l2 2 4 -4" {s}/>',
+      "gauge": f'<path d="M{cx} {cy+1}l3 -3" {s}/><path d="M{cx-7} {cy+5}a7 7 0 0 1 14 0" {s}/>',
+    }
+    return g[kind]
+
+HOW_SVG = '''<figure class="vizwrap reveal" aria-label="Diagram: how a Karani strategy moves from tested rules to paper to live trading under hard limits, monitored from the app">
+<div class="vizscroll">
+<svg viewBox="0 0 720 210" role="img" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="rail" x1="0" y1="0" x2="1" y2="0">
+   <stop offset="0" stop-color="#6F93AC"/><stop offset=".5" stop-color="#557790"/><stop offset="1" stop-color="#2C4757"/>
+  </linearGradient>
+ </defs>
+ <path d="M72 74 H648" fill="none" stroke="url(#rail)" stroke-width="3" stroke-linecap="round" opacity=".9"/>
+ <circle r="6" fill="#CE8168">
+  <animateMotion dur="5s" repeatCount="indefinite" path="M72 74 H648"/>
+ </circle>
+'''
+for i,(kind,t,sub) in enumerate(_how_nodes):
+    cx = 72 + i*144
+    HOW_SVG += (
+      f'<g>'
+      f'<circle cx="{cx}" cy="74" r="27" fill="#fff" stroke="rgba(85,119,144,.30)"/>'
+      f'<circle cx="{cx}" cy="74" r="27" fill="#6F93AC" opacity="0.06"/>'
+      + _mini_icon(kind, cx, 74) +
+      f'<text x="{cx}" y="124" text-anchor="middle" font-size="13" font-weight="700" fill="#2C4757">{t}</text>'
+      f'<text x="{cx}" y="142" text-anchor="middle" font-size="10.5" fill="#8a7f72">{sub}</text>'
+      f'<text x="{cx}" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#CE8168" opacity=".85">{i+1:02d}</text>'
+      f'</g>'
+    )
+HOW_SVG += '''</svg>
+</div>
+<figcaption>The path a strategy travels at Karani: proven on years of data, run on paper, then live on your own account, held inside hard limits, and watched from the app.</figcaption>
+</figure>'''
+
 # ---- PAGE 1: HOW IT WORKS ----------------------------------------------
 
 def build_how():
@@ -173,6 +304,8 @@ def build_how():
       'position size in advance. Karani watches the ES market, places orders through your AMP account '
       'over Rithmic, and stops automatically when it hits your daily-loss cap or contract limit. You '
       'keep the account, the settings, and a kill switch.</div>'
+
+      + HOW_SVG +
 
       '<h2>What an automated trading system actually does</h2>'
       '<p>Discretionary trading means a person decides each trade in the moment. An automated trading '
@@ -276,6 +409,8 @@ def build_safety():
       + spec("check","Paper before live","Every strategy proves itself on a paper account against the live market before a single real dollar is at risk.")
       + '</div>'
 
+      + SAFETY_SVG +
+
       '<h2>Why a daily-loss limit matters</h2>'
       '<p>A daily-loss limit is the single most important guardrail in systematic futures trading. It '
       'puts a hard floor under a bad day. Without one, a losing streak or an unusual market can compound '
@@ -343,6 +478,17 @@ def build_platform():
       'equity over any timeframe, every trade marked win or loss, the ES ticking live, and a panel that '
       'confirms the system is running. It is an iOS app, so the whole account fits on one calm screen in '
       'your pocket.</p>'
+
+      '<figure class="shot-frame reveal">'
+        '<div class="bar"><i></i><i></i><i></i><span class="url">app.karanimarkets.com</span></div>'
+        '<img class="shothide" src="/assets/dash-full.png" width="1600" height="1002" '
+          'alt="The Karani automated trading dashboard: live account balance, an equity curve, today&rsquo;s margin, and a systems-are-go panel" '
+          'loading="lazy" decoding="async">'
+        '<img class="shotshow" src="/assets/dash-mobile.png" width="820" height="706" '
+          'alt="The Karani dashboard on mobile showing account balance and the day&rsquo;s trade stats" '
+          'loading="lazy" decoding="async">'
+        '<span class="shot-tag"><span class="dot"></span>Live &middot; Auto-trader on</span>'
+      '</figure>'
 
       '<div class="answer"><b>What it is for:</b> monitoring, not micromanaging. You open the app to see '
       'that Karani is trading to plan, check the numbers, and, if you ever want to, adjust limits or stop '
