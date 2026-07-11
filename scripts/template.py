@@ -35,7 +35,7 @@ BLOGCSS = """
 .post .meta b{color:var(--brand-deep);font-weight:600}
 .article{max-width:720px;margin:0 auto;padding:40px 0 10px}
 .article .eyebrow{margin-bottom:12px}
-.article .cover{width:100%;border-radius:20px;margin:8px 0 26px;box-shadow:var(--shadow-card)}
+.article .cover{width:100%;height:auto;aspect-ratio:1200/630;border-radius:20px;margin:8px 0 26px;box-shadow:var(--shadow-card)}
 .article h1{font-size:44px;letter-spacing:-.03em;line-height:1.08;margin-bottom:14px}
 .article .amenu{color:var(--ink3);font-size:14px;margin-bottom:28px}
 .article .lead{font-size:19px;color:var(--ink);line-height:1.6;margin-bottom:24px}
