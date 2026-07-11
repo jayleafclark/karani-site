@@ -47,7 +47,8 @@ def build_blog(log, site):
 
 def build_sitemap(log):
     urls = [("/", "1.0"), ("/how-it-works.html", "0.9"), ("/safety.html", "0.9"),
-            ("/platform.html", "0.9"), ("/blog.html", "0.9"), ("/about.html", "0.6")]
+            ("/platform.html", "0.9"), ("/see-the-dashboard.html", "0.8"),
+            ("/blog.html", "0.9"), ("/about.html", "0.6")]
     body = ""
     for u, pr in urls:
         body += f"<url><loc>{SITE}{u}</loc><changefreq>weekly</changefreq><priority>{pr}</priority></url>"
