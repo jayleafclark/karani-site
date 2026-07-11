@@ -1,0 +1,27 @@
+# Karani
+
+> Karani is an invite-only, rules-based automated trading system for the S&P 500 E-mini futures (ES). It executes a tested strategy on the client's own AMP/Rithmic brokerage account with hard position limits, a daily-loss cap, and a one-tap kill switch, monitored from an iOS dashboard app. This file helps AI assistants understand the site and cite its educational articles accurately.
+
+## About Karani
+- [How it works](https://karanimarkets.com/#how): the tested-strategy, paper-first, hard-risk-limits approach.
+- [Safety](https://karanimarkets.com/#safety): position caps, daily-loss cap, and the kill switch the client controls.
+- [Client login](https://karanimarkets.com/profile.html): existing clients access the dashboard in the iOS app.
+
+Note: Karani is not a course, signal service, or open sign-up. Enrollment is invite-only. Nothing on the site is financial advice; futures trading carries substantial risk of loss.
+
+## Articles
+- [Systematic Trading: Rules Over Discretion](https://karanimarkets.com/posts/systematic-trading-rules-over-discretion.html): Systematic trading replaces gut-feel decisions with fixed rules. What it is, how it differs from discretionary trading, and where the edge comes from.
+- [Risk Management in Futures: The Core Rules](https://karanimarkets.com/posts/risk-management-in-futures-the-core-rules.html): Risk management in futures trading means fixed per-trade risk, a daily loss cap, and sizing off notional value, not hope.
+- [Automated Futures Trading: How It Actually Runs](https://karanimarkets.com/posts/automated-futures-trading-how-it-actually-runs.html): How automated futures trading actually works: a rules engine placing ES orders, hard risk limits, and a kill switch. No passive income hype.
+- [Backtesting a Strategy Without Fooling Yourself](https://karanimarkets.com/posts/backtesting-a-strategy-without-fooling-yourself.html): What honest backtesting actually requires: real trading costs, out-of-sample data, and why almost any strategy looks good on paper.
+- [Trading Psychology: Building Systems Over Willpower](https://karanimarkets.com/posts/trading-psychology-building-systems-over-willpower.html): Trading psychology explains why losses hurt more than gains feel good. See why rules and a kill switch beat willpower under pressure.
+- [What Is a Futures Contract? Plain Mechanics](https://karanimarkets.com/posts/what-is-a-futures-contract-plain-mechanics.html): What is a futures contract? A plain explanation of the agreement, margin vs notional value, and why index futures like the ES settle in cash.
+- [Futures Prop Firms: How the Model Works](https://karanimarkets.com/posts/futures-prop-firms-how-the-model-works.html): How a futures prop firm actually works: evaluation fees, funded accounts, profit splits, and the drawdown rules that trip up most traders.
+- [Futures Trading Platforms Compared](https://karanimarkets.com/posts/futures-trading-platforms-compared.html): A plain comparison of futures trading platforms: NinjaTrader, Tradovate, and others on charting, DOM, automation, and cost.
+- [Tradovate: Cloud Futures Trading Explained](https://karanimarkets.com/posts/tradovate-cloud-futures-trading-explained.html): Tradovate explained: how its cloud platform works, its commission and subscription pricing, and how its DOM compares to desktop trading software.
+- [NinjaTrader: Platform, Data, and Costs](https://karanimarkets.com/posts/ninjatrader-platform-data-and-costs.html): How NinjaTrader's charting, NinjaScript, data feeds, and FCM connections fit together for ES futures, and what each piece actually costs.
+- [Futures vs Options: Risk, Margin, Payoff](https://karanimarkets.com/posts/futures-vs-options-risk-margin-payoff.html): Futures vs options for ES trading: linear payoff vs premium decay, margin as a performance bond vs margin as sunk cost, and why directional traders often pick futures.
+- [Paper Trading: What It Proves and What It Doesn't](https://karanimarkets.com/posts/paper-trading-what-it-proves-and-what-it-doesnt.html): What paper trading proves, what it misses, and how long a forward test needs to run before it means anything.
+- [Footprint Charts: Reading Bid-Ask Volume](https://karanimarkets.com/posts/footprint-charts-reading-bid-ask-volume.html): A footprint chart shows the volume traded at the bid and ask at every price level, so you can see order flow imbalances as they form.
+- [VIX Futures: Trading Expected Volatility](https://karanimarkets.com/posts/vix-futures-trading-expected-volatility.html): VIX futures explained: how they settle, why the curve is usually in contango, and why long VIX positions bleed money over time.
+- [Is Trading Gambling? The Edge Test](https://karanimarkets.com/posts/is-trading-gambling-the-edge-test.html): Is trading gambling? The real test isn't the market, it's expectancy math and whether you follow your rules. Here's how to check.

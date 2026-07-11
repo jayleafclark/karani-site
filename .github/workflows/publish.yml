@@ -1,0 +1,70 @@
+name: Publish blog post
+
+# Aggressive-but-safe cadence for a new domain (per the SEO findings): ramp in.
+# Launch at 3 posts/week to get indexed and build the first cluster, then bump to
+# 4/week after ~4 weeks (add Tue+Thu below), 4-5/week from month 4. Never a mass
+# dump: that is the exact fingerprint of Google's scaled-content-abuse policy.
+# Also runnable on demand via workflow_dispatch.
+on:
+  schedule:
+    - cron: "0 14 * * 1,3,5"  # 14:00 UTC Mon/Wed/Fri (~9-10am ET). Ramp: -> "0 14 * * 1,2,3,4,5"
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Force a specific backlog slug (optional)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-blog
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pillow
+
+      - name: Generate the next post
+        id: gen
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          KARANI_MODEL: claude-sonnet-5
+        run: |
+          set +e
+          python scripts/generate_post.py "${{ github.event.inputs.slug }}"
+          code=$?
+          echo "exit=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" = "3" ]; then
+            echo "Backlog empty or no pending topic - nothing to publish."
+            exit 0
+          fi
+          exit $code
+
+      - name: Rebuild index, sitemap, llms.txt
+        if: steps.gen.outputs.exit == '0'
+        run: python scripts/build_index.py
+
+      - name: Commit and push as Karani Markets
+        if: steps.gen.outputs.exit == '0'
+        run: |
+          git config user.name "Karani Markets"
+          git config user.email "journal@karanimarkets.com"
+          git add posts/ assets/covers/ blog.html sitemap.xml llms.txt content/log.json content/backlog.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            slug=$(git diff --cached --name-only -- posts/ | head -1 | sed 's#posts/##;s#.html##')
+            git commit -m "New journal post: ${slug}"
+            git push
+          fi
