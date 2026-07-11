@@ -296,7 +296,7 @@
   @media(prefers-reduced-motion:reduce){.kx .anim{animation:none;opacity:1}}
   /* logo mark */
   .kx .mark svg, .kx .mk svg{width:26px;height:26px}
-  /* insight (Today, at a glance) — bigger eyebrow */
+  /* insight (Today, at a glance): bigger eyebrow */
   .kx .insight .lbl{font-size:12px;letter-spacing:.08em}
   /* login ambient animation */
   .kx .auth{position:relative;overflow:hidden}
@@ -330,6 +330,173 @@
     .kx .stats{grid-template-columns:1fr}
     .kx .auth-card{padding:30px 24px}
   }
+
+/* ===== MOBILE app-mockup tour ===== */
+.kapp{
+  --kc-cream:#FBF7EF; --kc-cream2:#F4ECDE; --kc-card:#ffffff;
+  --kc-ink:#3B3229; --kc-ink2:#7C7264; --kc-ink3:#9a9184;
+  --kc-brand:#6F93AC; --kc-deep:#557790; --kc-night:#2C4757;
+  --kc-terra:#CE8168; --kc-terra-soft:#FBEEE7;
+  --kc-night0:#132630; --kc-night1:#1B333F;
+  --kc-line:rgba(59,50,41,.09); --kc-line2:rgba(59,50,41,.055);
+  --kc-good:#4f8a6b; --kc-good-soft:#e7f2ec;
+  --kc-disp:'Jost',system-ui,sans-serif; --kc-body:'Hanken Grotesk',system-ui,sans-serif;
+  display:inline-block; position:relative;
+}
+/* ---- phone frame ---- */
+.kapp .kframe{
+  width:288px; border-radius:46px; background:#0d1a22;
+  padding:11px; position:relative;
+  box-shadow:0 50px 90px -34px rgba(16,30,38,.62), 0 8px 22px -12px rgba(16,30,38,.35);
+}
+.kapp .kframe::before{ /* side buttons */
+  content:""; position:absolute; left:-3px; top:118px; width:3px; height:58px;
+  border-radius:3px 0 0 3px; background:#0d1a22;
+  box-shadow:0 78px 0 #0d1a22;
+}
+.kapp .kframe::after{
+  content:""; position:absolute; right:-3px; top:150px; width:3px; height:76px;
+  border-radius:0 3px 3px 0; background:#0d1a22;
+}
+.kapp .kscreen{
+  border-radius:36px; overflow:hidden; background:var(--kc-cream);
+  position:relative; height:588px;
+}
+/* dynamic-island style pill */
+.kapp .kisland{
+  position:absolute; top:11px; left:50%; transform:translateX(-50%);
+  width:82px; height:24px; background:#0d1a22; border-radius:100px; z-index:20;
+}
+/* status bar */
+.kapp .kstat{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 22px 4px; font-family:var(--kc-body);
+  font-size:12px; font-weight:700; color:var(--kc-ink);
+}
+.kapp .kstat .sig{display:flex; align-items:center; gap:5px}
+.kapp .kstat .sig svg{width:15px; height:15px; color:var(--kc-ink)}
+/* scroll body */
+.kapp .kbody{
+  height:calc(588px - 34px - 60px); overflow:hidden;
+  padding:6px 16px 14px; position:relative;
+}
+/* greeting */
+.kapp .kgreet{display:flex; align-items:center; justify-content:space-between; margin:6px 2px 14px}
+.kapp .kgreet .hi{font-family:var(--kc-disp); font-weight:600; font-size:21px; letter-spacing:-.02em; color:var(--kc-ink)}
+.kapp .kgreet .hi span{color:var(--kc-ink3); display:block; font-family:var(--kc-body); font-weight:600; font-size:11px; letter-spacing:.02em; margin-top:2px}
+.kapp .kav{
+  width:38px; height:38px; border-radius:13px; flex:0 0 auto;
+  background:linear-gradient(150deg,var(--kc-brand),var(--kc-deep));
+  display:grid; place-items:center; color:#fff; font-family:var(--kc-disp);
+  font-weight:600; font-size:17px;
+}
+/* balance hero card (dark) */
+.kapp .kbal{
+  background:linear-gradient(158deg,var(--kc-night1),var(--kc-night0));
+  border-radius:24px; padding:18px 18px 16px; color:#fff; position:relative; overflow:hidden;
+  box-shadow:0 20px 40px -22px rgba(19,38,48,.7);
+}
+.kapp .kbal::after{ /* subtle sheen */
+  content:""; position:absolute; top:-40%; right:-20%; width:200px; height:200px;
+  background:radial-gradient(circle,rgba(111,147,172,.35),transparent 62%); pointer-events:none;
+}
+.kapp .kbal .lab{font-size:11.5px; font-weight:600; color:rgba(255,255,255,.62); letter-spacing:.02em}
+.kapp .kbal .amt{font-family:var(--kc-disp); font-weight:600; font-size:33px; letter-spacing:-.02em; margin:3px 0 8px; line-height:1}
+.kapp .kbal .pnl{display:inline-flex; align-items:center; gap:7px; font-size:12.5px; font-weight:600}
+.kapp .kbal .pnl .up{color:#7fc9a3; background:rgba(79,138,107,.2); padding:3px 9px; border-radius:100px; display:inline-flex; align-items:center; gap:4px}
+.kapp .kbal .pnl .up svg{width:11px; height:11px}
+.kapp .kbal .pnl .t{color:rgba(255,255,255,.5); font-weight:500; font-size:11.5px}
+/* equity spark inside bal card */
+.kapp .kbal .kspark{margin-top:12px; height:44px; position:relative}
+.kapp .kbal .kspark svg{width:100%; height:100%; display:block}
+.kapp .kbal .kranges{display:flex; gap:5px; margin-top:8px}
+.kapp .kbal .kranges span{font-size:10.5px; font-weight:600; color:rgba(255,255,255,.55); padding:3px 9px; border-radius:100px}
+.kapp .kbal .kranges span.on{color:#fff; background:rgba(255,255,255,.14)}
+/* section label */
+.kapp .ksec{font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--kc-ink3); margin:16px 4px 8px}
+/* kill switch card */
+.kapp .kkill{
+  background:var(--kc-card); border:1px solid var(--kc-line); border-radius:20px;
+  padding:14px 15px; display:flex; align-items:center; gap:13px;
+  box-shadow:0 2px 10px -5px rgba(59,50,41,.12); margin-top:2px;
+}
+.kapp .kkill .ki{
+  width:42px; height:42px; border-radius:13px; flex:0 0 auto; display:grid; place-items:center;
+  background:var(--kc-good-soft);
+}
+.kapp .kkill .ki svg{width:20px; height:20px; color:var(--kc-good)}
+.kapp .kkill .kt{flex:1; min-width:0}
+.kapp .kkill .kt b{font-family:var(--kc-body); font-weight:700; font-size:14.5px; color:var(--kc-ink); display:block}
+.kapp .kkill .kt span{font-size:11.5px; color:var(--kc-ink2); font-weight:500}
+.kapp .ktgl{
+  width:52px; height:31px; border-radius:100px; background:var(--kc-good);
+  position:relative; flex:0 0 auto; transition:background .25s ease;
+}
+.kapp .ktgl::after{
+  content:""; position:absolute; width:25px; height:25px; border-radius:50%; background:#fff;
+  top:3px; right:3px; transition:right .25s ease; box-shadow:0 2px 5px -1px rgba(0,0,0,.3);
+}
+/* systems status card */
+.kapp .ksys{
+  background:var(--kc-card); border:1px solid var(--kc-line); border-radius:20px;
+  padding:6px 15px; box-shadow:0 2px 10px -5px rgba(59,50,41,.12); margin-top:2px;
+}
+.kapp .ksys .srow{display:flex; align-items:center; gap:10px; padding:11px 0; border-top:1px solid var(--kc-line2); font-size:13px}
+.kapp .ksys .srow:first-child{border-top:0}
+.kapp .ksys .srow .sd{width:8px; height:8px; border-radius:50%; background:var(--kc-good); flex:0 0 auto; box-shadow:0 0 0 3px rgba(79,138,107,.16)}
+.kapp .ksys .srow .sd.blue{background:var(--kc-deep); box-shadow:0 0 0 3px rgba(85,119,144,.16)}
+.kapp .ksys .srow .snm{font-weight:600; color:var(--kc-ink); flex:1}
+.kapp .ksys .srow .sst{font-size:11.5px; font-weight:600; color:var(--kc-good)}
+.kapp .ksys .srow .sst.stream{color:var(--kc-deep)}
+/* recent trades */
+.kapp .ktr{
+  background:var(--kc-card); border:1px solid var(--kc-line); border-radius:20px;
+  padding:6px 15px; box-shadow:0 2px 10px -5px rgba(59,50,41,.12); margin-top:2px;
+}
+.kapp .ktr .trow{display:flex; align-items:center; gap:11px; padding:11px 0; border-top:1px solid var(--kc-line2)}
+.kapp .ktr .trow:first-child{border-top:0}
+.kapp .ktr .trow .tic{width:28px; height:28px; border-radius:9px; display:grid; place-items:center; font-family:var(--kc-disp); font-weight:600; font-size:11px; color:#fff; flex:0 0 auto; background:var(--kc-deep)}
+.kapp .ktr .trow .tmeta{flex:1; min-width:0}
+.kapp .ktr .trow .tmeta b{font-size:13px; font-weight:600; color:var(--kc-ink); display:block}
+.kapp .ktr .trow .tmeta span{font-size:11px; color:var(--kc-ink3); font-weight:500}
+.kapp .ktr .trow .tpl{font-family:var(--kc-body); font-weight:700; font-size:12px; padding:3px 9px; border-radius:100px; flex:0 0 auto}
+.kapp .ktr .trow .tpl.w{color:var(--kc-good); background:var(--kc-good-soft)}
+.kapp .ktr .trow .tpl.l{color:var(--kc-terra); background:var(--kc-terra-soft)}
+/* fade at bottom of scroll body */
+.kapp .kfade{position:absolute; left:0; right:0; bottom:0; height:26px; background:linear-gradient(transparent,var(--kc-cream)); pointer-events:none; z-index:5}
+/* bottom tab bar */
+.kapp .ktabs{
+  position:absolute; bottom:0; left:0; right:0; height:60px;
+  background:rgba(255,255,255,.92); backdrop-filter:blur(12px);
+  border-top:1px solid var(--kc-line); display:flex; align-items:center; justify-content:space-around;
+  padding-bottom:6px;
+}
+.kapp .ktabs a{display:flex; flex-direction:column; align-items:center; gap:3px; color:var(--kc-ink3); font-family:var(--kc-body); font-size:9px; font-weight:600}
+.kapp .ktabs a svg{width:21px; height:21px}
+.kapp .ktabs a.on{color:var(--kc-deep)}
+/* soft ambient band behind the phone (host controls whether shown) */
+.kapp .kglow{
+  position:absolute; inset:-30px -18px; z-index:-1; border-radius:50px;
+  background:radial-gradient(120% 80% at 50% 12%,rgba(111,147,172,.18),rgba(111,147,172,.04) 55%,transparent 76%);
+}
+/* subtle entrance / life */
+@keyframes kappRise{from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:none}}
+@keyframes kappPulse{0%,100%{opacity:1} 50%{opacity:.42}}
+@keyframes kappDraw{to{stroke-dashoffset:0}}
+.kapp .kbal .kspark .eqline{stroke-dasharray:520; stroke-dashoffset:520; animation:kappDraw 1.9s ease .3s forwards}
+.kapp .kbal .kspark .eqdot{animation:kappPulse 2.2s ease-in-out infinite}
+.kapp .k-anim{opacity:0; animation:kappRise .6s cubic-bezier(.2,.7,.2,1) forwards}
+@media (prefers-reduced-motion:reduce){
+  .kapp .k-anim{opacity:1; animation:none}
+  .kapp .kbal .kspark .eqline{stroke-dashoffset:0; animation:none}
+  .kapp .kbal .kspark .eqdot{animation:none}
+}
+@media(max-width:760px){
+  .kx .shell, .kx .tour-launch, .kx .tour-scrim, .kx .tour-ring, .kx .tour-pop{display:none!important}
+  .kx{min-height:0!important;background:var(--kc-cream,#FBF7EF)!important}
+  body{background:var(--kc-cream,#FBF7EF)}
+}
+
 </style>
 
 <div class="kx" id="kx">
@@ -409,11 +576,11 @@
           <div class="menu hidden" id="menu-alerts" style="min-width:290px">
             <div class="mh">Alerts</div>
             <button class="mi"><svg viewBox="0 0 24 24" style="color:var(--down)"><path d="M12 9v4M12 17h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L14.7 3.9a2 2 0 00-3.4 0z"/></svg><span class="txt">Order monitor attached a stop to an open position.<small>2 min ago</small></span></button>
-            <button class="mi"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg><span class="txt">CPI released — margin gate re-checked, all clear.<small>1 hr ago</small></span></button>
+            <button class="mi"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg><span class="txt">CPI released. Margin gate re-checked, all clear.<small>1 hr ago</small></span></button>
             <button class="mi"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span class="txt">Daily check: all systems go.<small>Today, 8:29 AM</small></span></button>
           </div>
         </div>
-        <div class="master" id="tt-master" title="Master switch — stops all strategies and new orders to Rithmic. Databento keeps running.">
+        <div class="master" id="tt-master" title="Master switch: stops all strategies and new orders to Rithmic. Databento keeps running.">
           <div class="ml"><span class="lbl">Auto-Trader</span><b><span class="sd"></span><span class="st">Live</span></b></div>
           <div class="sw" id="sw" onclick="tgl()"><div class="knob"></div></div>
         </div>
@@ -479,7 +646,7 @@
             <div class="card insight anim" style="animation-delay:.18s">
               <span class="lbl" style="color:var(--brand-deep)">Today, at a glance</span>
               <h3>The market is favoring the fade.</h3>
-              <p>Overnight was choppy and the RTH open printed balanced — no clear trend, which is exactly where the fade
+              <p>Overnight was choppy and the RTH open printed balanced, no clear trend, which is exactly where the fade
                  earns. You’ve faded <b>7 levels and 5 held</b>, for <b class="up">+$312</b> on the day. The prior-day high
                  at 5012 has rejected twice and is still holding; sizing is steady at 5 lots. Backtest, paper and live are
                  tracking within a tick of each other, so execution is clean.</p>
@@ -503,7 +670,7 @@
                 </div>
                 <div style="text-align:right"><div class="up tnum" style="font-weight:700;font-size:17px">+$125</div><div class="tnum" style="color:var(--ink-3);font-size:12px">+2.0t</div></div>
               </div>
-              <div style="color:var(--ink-3);font-size:12.5px;margin-top:15px;text-align:center">2 of 2 slots active · Waiting for the next level.</div>
+              <div style="color:var(--ink-3);font-size:12.5px;margin-top:15px;text-align:center">2 of 2 slots active · Waiting for the next price level.</div>
             </div>
 
             <div class="card anim" style="animation-delay:.24s">
@@ -523,9 +690,9 @@
 
           <div class="colspan card news anim" style="animation-delay:.28s">
             <div class="sec-h"><h3>Relevant News</h3><span class="lbl">High-impact · US only</span></div>
-            <div class="ni"><span class="imp hi"></span><span class="t">7:30</span><div><b>CPI (m/m)</b> — 0.3% vs 0.2% forecast. <span style="color:var(--ink-3)">Hotter than expected; ES sold the print, then faded back within 20 minutes.</span></div></div>
-            <div class="ni"><span class="imp hi"></span><span class="t">13:00</span><div><b>FOMC Meeting Minutes</b> <span style="color:var(--ink-3)">— expect a volatility and margin bump around the release; the auto-trader re-checks the gate automatically.</span></div></div>
-            <div class="ni"><span class="imp"></span><span class="t">9:00</span><div><b>Fed’s Williams Speaks</b> <span style="color:var(--ink-3)">— medium impact, monitoring.</span></div></div>
+            <div class="ni"><span class="imp hi"></span><span class="t">7:30</span><div><b>CPI (m/m)</b>: 0.3% vs 0.2% forecast. <span style="color:var(--ink-3)">Hotter than expected; ES sold the print, then faded back within 20 minutes.</span></div></div>
+            <div class="ni"><span class="imp hi"></span><span class="t">13:00</span><div><b>FOMC Meeting Minutes</b> <span style="color:var(--ink-3)">Expect a volatility and margin bump around the release; the auto-trader re-checks the gate automatically.</span></div></div>
+            <div class="ni"><span class="imp"></span><span class="t">9:00</span><div><b>Fed’s Williams Speaks</b> <span style="color:var(--ink-3)">Medium impact, monitoring.</span></div></div>
           </div>
         </div>
       </div>
@@ -566,7 +733,7 @@
             </div>
             <div class="row" style="margin-top:22px;gap:10px">
               <button class="btn btn-ghost" style="width:auto;padding:11px 18px" onclick="document.getElementById('photo-input').click()">Upload photo</button>
-              <button class="btn btn-ghost" style="width:auto;padding:11px 18px" onclick="toast('Edit profile — coming soon.')">Edit profile</button>
+              <button class="btn btn-ghost" style="width:auto;padding:11px 18px" onclick="toast('Edit profile: coming soon.')">Edit profile</button>
             </div>
           </div>
           <div class="card anim" style="animation-delay:.10s">
@@ -579,7 +746,7 @@
             <div class="sec-h"><h3>Connected Rithmic Accounts</h3><span class="badge">2 linked</span></div>
             <div class="acctcard"><div class="ic">01</div><div style="flex:1"><div style="font-weight:600">AMP · Rithmic 01</div><div style="color:var(--ink-3);font-size:12.5px">Live · trading</div></div><span class="badge"><span class="dot" style="width:6px;height:6px;box-shadow:none"></span>Active</span></div>
             <div class="acctcard"><div class="ic">P</div><div style="flex:1"><div style="font-weight:600">AMP · Rithmic Paper</div><div style="color:var(--ink-3);font-size:12.5px">Paper · shadowing live</div></div></div>
-            <button class="btn btn-ghost" style="width:auto;padding:11px 18px;margin-top:6px" onclick="toast('Link a Rithmic account — coming soon.')">+ Link another account</button>
+            <button class="btn btn-ghost" style="width:auto;padding:11px 18px;margin-top:6px" onclick="toast('Link a Rithmic account: coming soon.')">+ Link another account</button>
           </div>
           <div class="card anim" style="animation-delay:.18s">
             <div class="sec-h"><h3>Risk &amp; sizing</h3><span class="lbl">set with Karani</span></div>
@@ -604,7 +771,7 @@
               <div class="field mini"><label>Gateway</label><input placeholder="rprotocol-nyc.rithmic.com"></div>
               <div class="field mini"><label>Password</label><input type="password" placeholder="••••••••"></div>
             </div>
-            <button class="btn btn-brand" style="width:auto;padding:10px 18px;margin-top:12px" onclick="toast('Rithmic account linked — verifying…')">Link account</button>
+            <button class="btn btn-brand" style="width:auto;padding:10px 18px;margin-top:12px" onclick="toast('Rithmic account linked, verifying…')">Link account</button>
           </div>
         </div>
       </div>
@@ -779,7 +946,7 @@
   window.tgl=function(){var sw=document.getElementById('sw'),off=sw.classList.toggle('off');
     $('.master .st').textContent=off?'Paused':'Live';
     $('.master .sd').style.background=off?'var(--ink-3)':'var(--brand)';
-    toast(off?'Auto-Trader paused — no new orders. Databento still running.':'Auto-Trader live — strategies armed.');};
+    toast(off?'Auto-Trader paused. No new orders. Databento still running.':'Auto-Trader live, strategies armed.');};
 
   // ---- entrance animation ----
   function playAnims(){var view=document.querySelector('.view:not(.hidden)');if(!view)return;view.querySelectorAll('.anim').forEach(function(el){el.style.animationName='none';void el.offsetWidth;el.style.animationName='';});}
@@ -980,7 +1147,7 @@
   @media (prefers-reduced-motion:reduce){
     .kx .tour-scrim,.kx .tour-ring,.kx .tour-pop{transition:opacity .001s !important}
   }
-  /* instant mode (QA deep-link / reduced motion) — snap to final frame, no transitions */
+  /* instant mode (QA deep-link / reduced motion): snap to final frame, no transitions */
   .kx.tour-instant .tour-scrim,.kx.tour-instant .tour-ring,.kx.tour-instant .tour-pop{transition:none !important}
   @media (max-width:560px){
     .kx .tour-pop{width:calc(100vw - 24px)}
@@ -1118,7 +1285,7 @@
     var order = tall ? ['right','left','bottom','top'] : [s.pos,'bottom','top','right','left'];
     var side = null;
     for (var k=0;k<order.length;k++){ if(fits(order[k])){ side=order[k]; break; } }
-    if(!side){ // nothing fits cleanly — pick the side with the most room
+    if(!side){ // nothing fits cleanly. Pick the side with the most room
       var room={top:y, bottom:vh-(y+h), left:x, right:vw-(x+w)};
       side = Object.keys(room).sort(function(a,b){return room[b]-room[a];})[0];
     }
@@ -1211,12 +1378,296 @@
 
   // auto-start once the app view has settled (supports ?step=N deep-link for QA/replay)
   window.addEventListener('load', function(){
+    if (matchMedia('(max-width:760px)').matches) return;
     var m = /[?&]step=(\d+)/.exec(location.search);
     if (m) K.classList.add('tour-instant');   // snap to final frame for QA/replay deep-links
     setTimeout(function(){
       Tour.start();
       if (m){ var n = Math.max(0, Math.min(steps.length-1, parseInt(m[1],10))); i = n; render(); }
     }, 650);
+  });
+})();
+</script>
+
+<!-- ====================================================================
+     KARANI MOBILE APP TOUR  (shown only on phones in see-the-dashboard.html)
+     A phone-framed, tap-through walkthrough of the real Karani app mockup.
+     Self-contained CSS+JS, scoped to .katour / .kapp. Placeholder user: John.
+==================================================================== -->
+<style>
+.katour{
+  --kc-cream:#FBF7EF; --kc-cream2:#F4ECDE; --kc-card:#ffffff;
+  --kc-ink:#3B3229; --kc-ink2:#7C7264; --kc-ink3:#9a9184;
+  --kc-brand:#6F93AC; --kc-deep:#557790; --kc-night:#2C4757;
+  --kc-terra:#CE8168; --kc-terra-soft:#FBEEE7;
+  --kc-good:#4f8a6b; --kc-good-soft:#e7f2ec;
+  --kc-disp:'Jost',system-ui,sans-serif; --kc-body:'Hanken Grotesk',system-ui,sans-serif;
+  display:none; position:fixed; inset:0; z-index:60; background:var(--kc-cream);
+  font-family:var(--kc-body); color:var(--kc-ink);
+  flex-direction:column; align-items:center;
+  padding:22px 20px calc(20px + env(safe-area-inset-bottom));
+  overflow:hidden;
+}
+.katour.on{display:flex}
+/* soft brand backdrop */
+.katour::before{
+  content:""; position:absolute; inset:0; z-index:0;
+  background:
+    radial-gradient(90% 55% at 50% 0%,rgba(111,147,172,.16),transparent 60%),
+    radial-gradient(70% 40% at 100% 100%,rgba(206,129,104,.10),transparent 60%);
+  pointer-events:none;
+}
+/* header row: eyebrow + progress */
+.katour .kt-head{
+  position:relative; z-index:2; width:100%; max-width:360px;
+  display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;
+}
+.katour .kt-head .brand{display:flex; align-items:center; gap:8px; font-family:var(--kc-disp); font-weight:600; font-size:17px; letter-spacing:-.01em}
+.katour .kt-head .brand .mk{width:26px; height:26px; border-radius:8px; background:linear-gradient(150deg,var(--kc-brand),var(--kc-deep)); display:grid; place-items:center; color:#fff; font-size:14px}
+.katour .kt-dots{display:flex; gap:6px}
+.katour .kt-dots i{width:7px; height:7px; border-radius:50%; background:rgba(59,50,41,.16); transition:all .25s ease}
+.katour .kt-dots i.on{background:var(--kc-deep); width:20px; border-radius:100px}
+/* stage: the phone */
+.katour .kt-stage{position:relative; z-index:2; flex:1; display:flex; align-items:center; justify-content:center; width:100%; min-height:0; overflow:hidden}
+.katour .kapp{transform-origin:center; transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+/* tour phone: actual pixel height set by viewport so header+caption+nav always fit.
+   (transform:scale would keep the full layout box, so we size the screen for real.) */
+.katour .kscreen{height:548px}
+.katour .kbody{height:calc(548px - 34px - 60px)}
+@media (max-height:900px){ .katour .kscreen{height:500px} .katour .kbody{height:calc(500px - 34px - 60px)} }
+@media (max-height:820px){ .katour .kscreen{height:452px} .katour .kbody{height:calc(452px - 34px - 60px)} }
+@media (max-height:720px){ .katour .kscreen{height:400px} .katour .kbody{height:calc(400px - 34px - 56px)} .katour .ktabs{height:56px} }
+@media (max-height:640px){ .katour .kscreen{height:352px} .katour .kbody{height:calc(352px - 30px - 52px)} }
+/* highlight overlay on the app */
+.katour .kapp .khl{
+  position:absolute; border-radius:20px; pointer-events:none; z-index:30;
+  box-shadow:0 0 0 3px var(--kc-deep), 0 0 0 9px rgba(85,119,144,.22), 0 0 0 2000px rgba(19,38,48,.34);
+  opacity:0; transition:opacity .35s ease, top .45s cubic-bezier(.2,.7,.2,1),
+    left .45s cubic-bezier(.2,.7,.2,1), width .45s cubic-bezier(.2,.7,.2,1), height .45s cubic-bezier(.2,.7,.2,1);
+}
+.katour .kapp .khl.show{opacity:1}
+/* caption card below phone */
+.katour .kt-cap{
+  position:relative; z-index:2; width:100%; max-width:360px;
+  background:var(--kc-card); border:1px solid rgba(59,50,41,.09); border-radius:20px;
+  box-shadow:0 18px 46px -26px rgba(46,66,80,.5); padding:18px 20px 16px; margin-top:14px;
+}
+.katour .kt-cap .ey{font-size:11px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--kc-deep)}
+.katour .kt-cap h4{font-family:var(--kc-disp); font-weight:600; font-size:20px; letter-spacing:-.01em; margin:5px 0 4px; color:var(--kc-ink)}
+.katour .kt-cap p{font-size:14px; line-height:1.55; color:var(--kc-ink2); margin:0}
+.katour .kt-cap .cta{
+  margin-top:14px; display:inline-flex; align-items:center; justify-content:center; gap:8px; width:100%;
+  background:var(--kc-deep); color:#fff; font-family:var(--kc-body); font-weight:600; font-size:15px;
+  border:0; border-radius:100px; padding:14px; cursor:pointer; text-decoration:none;
+}
+.katour .kt-cap .cta svg{width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2.2}
+.katour .kt-cap .plat{margin-top:12px; display:flex; align-items:center; justify-content:center; gap:8px; font-size:12px; color:var(--kc-ink3); font-weight:600}
+.katour .kt-cap .plat svg{width:14px; height:14px}
+/* nav row */
+.katour .kt-nav{
+  position:relative; z-index:2; width:100%; max-width:360px;
+  display:flex; align-items:center; gap:10px; margin-top:12px;
+}
+.katour .kt-nav .back{margin-right:auto}
+.katour .kt-nav button{
+  font-family:var(--kc-body); font-weight:600; font-size:15px; border-radius:100px;
+  padding:13px 20px; cursor:pointer; border:1px solid rgba(59,50,41,.12); background:#fff; color:var(--kc-ink);
+}
+.katour .kt-nav .next{flex:1; background:var(--kc-deep); color:#fff; border-color:var(--kc-deep); display:inline-flex; align-items:center; justify-content:center; gap:8px}
+.katour .kt-nav .next svg{width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2.2}
+.katour .kt-nav .back[hidden]{display:none}
+/* frame is slightly narrower in the tour so the whole phone sits comfortably */
+.katour .kframe{width:272px}
+@media (max-width:360px){ .katour .kframe{width:250px} }
+@keyframes katFade{from{opacity:0} to{opacity:1}}
+.katour.on .kt-cap{animation:katFade .4s ease both}
+@media (prefers-reduced-motion:reduce){
+  .katour .kapp,.katour .kapp .khl,.katour.on .kt-cap{transition:none;animation:none}
+}
+/* On phones the app tour owns the screen. The fixed "Back to site" pill stays at
+   bottom-left (its usual spot); the tour's Back/Next controls are inset from the left
+   so they never sit under it. */
+@media(max-width:760px){
+  #kx-home{z-index:2147483647!important}
+  .katour .kt-nav{padding-left:128px; box-sizing:border-box; justify-content:flex-end}
+  .katour .kt-nav .back{margin-right:auto}
+  .katour{padding-bottom:calc(20px + env(safe-area-inset-bottom))}
+}
+</style>
+
+<div class="katour" id="katour" aria-label="A guided tour of the Karani app">
+  <div class="kt-head">
+    <div class="brand"><span class="mk">k</span>Karani</div>
+    <div class="kt-dots" id="ktDots" aria-hidden="true"></div>
+  </div>
+
+  <div class="kt-stage">
+    <!-- the app mockup, with a movable highlight ring -->
+    <div class="kapp" id="ktApp">
+      <div class="kframe">
+        <div class="kscreen">
+          <div class="kisland"></div>
+          <div class="kstat">
+            <span>9:41</span>
+            <span class="sig">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 20h3v-6H2v6zm5 0h3V9H7v11zm5 0h3V4h-3v16zm5 0h3v-9h-3v9z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13a10 10 0 0 1 14 0M8.5 16.5a5 5 0 0 1 7 0M12 20h.01"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="7" width="18" height="10" rx="2.4"/><rect x="21" y="10" width="1.6" height="4" rx=".8"/></svg>
+            </span>
+          </div>
+          <div class="kbody">
+            <div class="kgreet" id="kt-greet">
+              <div class="hi">Hey John<span>Systems live · session open</span></div>
+              <div class="kav">J</div>
+            </div>
+            <div class="kbal" id="kt-bal">
+              <div class="lab">Account equity</div>
+              <div class="amt">$48,920.40</div>
+              <div class="pnl">
+                <span class="up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg>+$312.60</span>
+                <span class="t">+0.64% today</span>
+              </div>
+              <div class="kspark">
+                <svg viewBox="0 0 300 60" preserveAspectRatio="none">
+                  <defs><linearGradient id="katEqFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd9b4" stop-opacity=".34"/><stop offset="1" stop-color="#8fd9b4" stop-opacity="0"/></linearGradient></defs>
+                  <path d="M0 48 C24 45 40 40 62 38 C92 35 104 42 132 34 C164 25 176 30 208 20 C240 11 262 16 296 6 L296 60 L0 60 Z" fill="url(#katEqFill)"/>
+                  <path d="M0 48 C24 45 40 40 62 38 C92 35 104 42 132 34 C164 25 176 30 208 20 C240 11 262 16 296 6" fill="none" stroke="#8fd9b4" stroke-width="2.6" stroke-linecap="round"/>
+                  <circle cx="296" cy="6" r="3.6" fill="#a6e6c6"/>
+                </svg>
+              </div>
+              <div class="kranges"><span>1D</span><span class="on">1W</span><span>1M</span><span>YTD</span><span>All</span></div>
+            </div>
+            <div class="ksec">Control</div>
+            <div class="kkill" id="kt-kill">
+              <div class="ki"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v10"/><path d="M18.4 6.6a9 9 0 1 1-12.8 0"/></svg></div>
+              <div class="kt"><b>Kill switch</b><span>Halt all strategies instantly</span></div>
+              <div class="ktgl"></div>
+            </div>
+            <div class="ksec">Auto-trader</div>
+            <div class="ksys" id="kt-sys">
+              <div class="srow"><span class="sd"></span><span class="snm">Strategy engine</span><span class="sst">Running</span></div>
+              <div class="srow"><span class="sd blue"></span><span class="snm">Live market feed</span><span class="sst stream">Streaming</span></div>
+              <div class="srow"><span class="sd"></span><span class="snm">Risk limits</span><span class="sst">Enforced</span></div>
+            </div>
+            <div class="ksec">Today's trades</div>
+            <div class="ktr" id="kt-tr">
+              <div class="trow"><span class="tic">L</span><div class="tmeta"><b>Level fade · ES</b><span>09:47 · 2 contracts</span></div><span class="tpl w">+$187</span></div>
+              <div class="trow"><span class="tic">L</span><div class="tmeta"><b>Level fade · ES</b><span>10:58 · 1 contract</span></div><span class="tpl l">−$96</span></div>
+            </div>
+            <div class="kfade"></div>
+          </div>
+          <div class="ktabs">
+            <a class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Home</a>
+            <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 13l3-3 3 2 4-5"/></svg>Equity</a>
+            <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/></svg>Trades</a>
+            <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>Account</a>
+          </div>
+          <div class="khl" id="ktHL"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kt-cap" id="ktCap">
+    <span class="ey" id="ktEy">A quick tour</span>
+    <h4 id="ktTitle">This is your Karani app.</h4>
+    <p id="ktBody">Your whole system on one calm screen: balance, the auto-trader, and the kill switch, in your pocket.</p>
+    <div id="ktCtaWrap"></div>
+  </div>
+
+  <div class="kt-nav">
+    <button class="back" id="ktBack" hidden onclick="KATour.back()">Back</button>
+    <button class="next" id="ktNext" onclick="KATour.next()">Next <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.getElementById('katour');
+  if(!root) return;
+  var app = document.getElementById('ktApp');
+  var hl  = document.getElementById('ktHL');
+  var screen = app.querySelector('.kscreen');
+  var reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  var steps = [
+    { t:null, ey:'A quick tour', title:'This is your Karani app.',
+      body:'Your whole system on one calm screen. Swipe through what it shows you, right from your phone.' },
+    { t:'#kt-bal', ey:'Your account', title:'Live balance and today’s P&L.',
+      body:'Your equity and the day’s profit or loss update in real time, with the curve over any timeframe.' },
+    { t:'#kt-kill', ey:'The kill switch', title:'One tap halts everything.',
+      body:'Stop every strategy and pull all working orders instantly, from anywhere. You always keep control.' },
+    { t:'#kt-sys', ey:'Auto-trader', title:'See the system working.',
+      body:'Strategy engine, the live market feed and your risk limits, each with a clear status at a glance.' },
+    { t:'#kt-tr', ey:'Your trades', title:'Every fill, logged for you.',
+      body:'Each trade Karani takes on the ES is recorded with its time, size and result. Nothing hidden.' },
+    { t:null, ey:'That’s the app', title:'Karani lives on iOS and the web.',
+      body:'Run it from the iPhone app or your browser dashboard. Access is invitation only.', cta:true }
+  ];
+  var i = 0;
+
+  var elEy=document.getElementById('ktEy'), elTitle=document.getElementById('ktTitle'),
+      elBody=document.getElementById('ktBody'), elDots=document.getElementById('ktDots'),
+      elBack=document.getElementById('ktBack'), elNext=document.getElementById('ktNext'),
+      elCta=document.getElementById('ktCtaWrap');
+
+  function buildDots(){
+    elDots.innerHTML='';
+    for(var d=0; d<steps.length; d++){
+      var s=document.createElement('i'); if(d===i) s.className='on'; elDots.appendChild(s);
+    }
+  }
+  function placeHL(sel){
+    var el = sel ? screen.querySelector(sel) : null;
+    if(!el){ hl.classList.remove('show'); return; }
+    var sb = screen.getBoundingClientRect();
+    var b = el.getBoundingClientRect();
+    var pad = 6;
+    hl.style.top = (b.top - sb.top - pad) + 'px';
+    hl.style.left = (b.left - sb.left - pad) + 'px';
+    hl.style.width = (b.width + pad*2) + 'px';
+    hl.style.height = (b.height + pad*2) + 'px';
+    hl.classList.add('show');
+  }
+  function render(){
+    var s = steps[i];
+    elEy.textContent = s.ey; elTitle.textContent = s.title; elBody.textContent = s.body;
+    elCta.innerHTML = s.cta
+      ? '<a class="cta" href="/#request" onclick="KATour.request(event)">Request access <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>'
+      : '';
+    elBack.hidden = (i===0);
+    elNext.innerHTML = (i===steps.length-1)
+      ? 'Done'
+      : 'Next <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+    buildDots();
+    placeHL(s.t);
+  }
+
+  var KATour = {
+    open:function(){ root.classList.add('on'); i=0; requestAnimationFrame(function(){ setTimeout(render, reduce?0:80); }); },
+    close:function(){ root.classList.remove('on'); },
+    next:function(){ if(i<steps.length-1){ i++; render(); } else { KATour.close(); } },
+    back:function(){ if(i>0){ i--; render(); } },
+    request:function(e){ if(e) e.preventDefault(); location.href='/#request'; }
+  };
+  window.KATour = KATour;
+
+  // keep the highlight aligned if the viewport changes
+  window.addEventListener('resize', function(){ if(root.classList.contains('on')) render(); });
+
+  // Auto-open on mobile widths; the desktop spotlight tour stays for wider screens.
+  function isMobile(){ return matchMedia('(max-width:760px)').matches; }
+  window.addEventListener('load', function(){
+    if(isMobile()){
+      // suppress the desktop tour auto-start on mobile
+      document.documentElement.classList.add('kat-mobile');
+      var qm = /[?&]ktstep=(\d+)/.exec(location.search);
+      setTimeout(function(){
+        KATour.open();
+        if(qm){ var n = Math.max(0, Math.min(steps.length-1, parseInt(qm[1],10)));
+          setTimeout(function(){ i=n; render(); }, 120); }
+      }, 350);
+    }
   });
 })();
 </script>
