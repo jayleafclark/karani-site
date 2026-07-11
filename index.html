@@ -590,17 +590,21 @@ footer{background:var(--night);color:#fff;margin-top:70px;padding:64px 0 34px}
 .kapp .ktabs a svg{width:21px; height:21px}
 .kapp .ktabs a.on{color:var(--kc-deep)}
 /* soft ambient band behind the phone (host controls whether shown) */
-.kapp .kglow{
-  position:absolute; inset:-30px -18px; z-index:-1; border-radius:50px;
-  background:radial-gradient(120% 80% at 50% 12%,rgba(111,147,172,.18),rgba(111,147,172,.04) 55%,transparent 76%);
-}
+.kapp .kglow{ display:none; }
 /* subtle entrance / life */
 @keyframes kappRise{from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:none}}
 @keyframes kappPulse{0%,100%{opacity:1} 50%{opacity:.42}}
 @keyframes kappDraw{to{stroke-dashoffset:0}}
-@keyframes kfloat{0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)}}
-.kapp .kbal .kspark .eqline{stroke-dasharray:520; stroke-dashoffset:520; animation:kappDraw 1.9s ease .3s forwards}
-.kapp .kbal .kspark .eqdot{animation:kappPulse 2.2s ease-in-out infinite}
+/* live equity curve: draw in, then a gentle endless shimmer so the line reads as live */
+@keyframes kappDrawLoop{
+  0%{stroke-dashoffset:520}
+  36%{stroke-dashoffset:0}
+  100%{stroke-dashoffset:0}
+}
+@keyframes kappSheen{0%,100%{opacity:.9} 50%{opacity:.55}}
+@keyframes kappDot{0%,100%{transform:translateY(0)} 50%{transform:translateY(-2px)}}
+.kapp .kbal .kspark .eqline{stroke-dasharray:520; stroke-dashoffset:520; animation:kappDrawLoop 5.2s ease-in-out .3s infinite, kappSheen 3.1s ease-in-out .3s infinite}
+.kapp .kbal .kspark .eqdot{transform-box:fill-box; transform-origin:center; animation:kappPulse 2.2s ease-in-out infinite, kappDot 3.1s ease-in-out infinite}
 .kapp .k-anim{opacity:0; animation:kappRise .6s cubic-bezier(.2,.7,.2,1) forwards}
 @media (prefers-reduced-motion:reduce){
   .kapp .k-anim{opacity:1; animation:none}
@@ -616,8 +620,7 @@ footer{background:var(--night);color:#fff;margin-top:70px;padding:64px 0 34px}
 }
 @media(max-width:980px) and (prefers-reduced-motion:no-preference){
   .hero-app .kframe{animation:kappRise .7s cubic-bezier(.2,.7,.2,1) both}
-  /* gentle continuous float so the mockup stays alive after it rises in (parent floats; child keeps its own rise/draw/pulse) */
-  .hero-app{animation:kfloat 4.5s ease-in-out 1s infinite}
+  /* the phone frame itself stays still; only the on-screen content (chart + numbers) animates */
 }
 
 </style>
@@ -1078,6 +1081,43 @@ document.addEventListener('submit',function(e){
   var form=card.querySelector('.mform'),su=card.querySelector('.msuccess');
   if(form&&su){form.hidden=true;su.hidden=false;var b=su.querySelector('button');setTimeout(function(){if(b)b.focus();},50);}
 });
+
+// ---- live in-screen ticker for the mobile app mockup (.kapp) ----
+// Nudges the displayed balance + today's P&L by small amounts so the mockup
+// reads like a live account. Marketing mockup only, not real data.
+(function(){
+  var amtEl=document.querySelector('.kapp .kbal .amt');
+  var upEl=document.querySelector('.kapp .kbal .pnl .up');
+  if(!amtEl||!upEl)return;
+  // respect reduced-motion: leave the base values static
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var baseEquity=48920.40;      // starting account equity
+  var baseStart=baseEquity-312.60; // yesterday's close, so P&L = equity - start
+  var equity=baseEquity;
+  var fmt=function(n){return n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});};
+  // preserve the leading arrow svg inside .up; only swap the trailing text node
+  var upSvg=upEl.querySelector('svg');
+  function render(){
+    amtEl.textContent='$'+fmt(equity);
+    var pnl=equity-baseStart;
+    var pct=(pnl/baseStart)*100;
+    var txt=(pnl>=0?'+$':'-$')+fmt(Math.abs(pnl));
+    // rebuild .up: keep the svg, replace text
+    upEl.textContent='';
+    if(upSvg)upEl.appendChild(upSvg);
+    upEl.appendChild(document.createTextNode(txt));
+    var tEl=upEl.parentNode.querySelector('.t');
+    if(tEl)tEl.textContent=(pct>=0?'+':'')+pct.toFixed(2)+'% today';
+  }
+  setInterval(function(){
+    // small realistic drift, gently mean-reverting toward base so it stays believable
+    var drift=(Math.random()-0.5)*7.2;              // +/- ~$3.6 per tick
+    var pull=(baseEquity-equity)*0.06;              // ease back toward base
+    equity+=drift+pull;
+    render();
+  },2200);
+  render();
+})();
 </script>
 </body>
 </html>
