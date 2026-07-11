@@ -68,3 +68,10 @@ jobs:
             git commit -m "New journal post: ${slug}"
             git push
           fi
+
+      - name: Cross-post to X + LinkedIn (only if configured)
+        if: steps.gen.outputs.exit == '0'
+        env:
+          UPLOADPOST_API_KEY: ${{ secrets.UPLOADPOST_API_KEY }}
+          KARANI_UPLOADPOST_PROFILE: ${{ secrets.KARANI_UPLOADPOST_PROFILE }}
+        run: python scripts/post_social.py
