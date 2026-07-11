@@ -362,9 +362,12 @@ footer{background:var(--night);color:#fff;margin-top:70px;padding:64px 0 34px}
   /* Product column merely duplicates the mobile nav (How it works / Safety / Dashboard / Blog) */
   .foot-grid .fcol:nth-of-type(2){display:none}
 
-  /* --- TIER 2: cap the hero phone mockup + tighten hero band --- */
+  /* --- HERO: tighten band; drop secondary CTA on mobile; keep mockup at its natural 288px so the fixed-size screen content never clips/warps --- */
   .hero{padding:26px 0 22px}
-  .hero-app .kapp .kframe{width:230px}
+  .hero-cta .watch{display:none}
+  .hero-cta{margin-top:22px}
+  .hero-cta .btn-brand{max-width:340px;margin:0 auto}
+  .hero-app{margin-top:8px}
 
   /* --- TIER 2: de-card the home feat-grid (2x2, lighter chrome) --- */
   .feat-grid{grid-template-columns:1fr 1fr;gap:12px}
@@ -595,6 +598,7 @@ footer{background:var(--night);color:#fff;margin-top:70px;padding:64px 0 34px}
 @keyframes kappRise{from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:none}}
 @keyframes kappPulse{0%,100%{opacity:1} 50%{opacity:.42}}
 @keyframes kappDraw{to{stroke-dashoffset:0}}
+@keyframes kfloat{0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)}}
 .kapp .kbal .kspark .eqline{stroke-dasharray:520; stroke-dashoffset:520; animation:kappDraw 1.9s ease .3s forwards}
 .kapp .kbal .kspark .eqdot{animation:kappPulse 2.2s ease-in-out infinite}
 .kapp .k-anim{opacity:0; animation:kappRise .6s cubic-bezier(.2,.7,.2,1) forwards}
@@ -612,6 +616,8 @@ footer{background:var(--night);color:#fff;margin-top:70px;padding:64px 0 34px}
 }
 @media(max-width:980px) and (prefers-reduced-motion:no-preference){
   .hero-app .kframe{animation:kappRise .7s cubic-bezier(.2,.7,.2,1) both}
+  /* gentle continuous float so the mockup stays alive after it rises in (parent floats; child keeps its own rise/draw/pulse) */
+  .hero-app{animation:kfloat 4.5s ease-in-out 1s infinite}
 }
 
 </style>
