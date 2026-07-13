@@ -58,11 +58,34 @@ BLOGCSS = """
 
 DOCTOP = ('<!doctype html><html lang="en"><head><meta charset="utf-8">'
           '<meta name="viewport" content="width=device-width, initial-scale=1">')
+
+# Site-wide identity node, emitted in the <head> of every generated page so
+# search engines and AI assistants resolve the same Karani entity from any URL
+# (mirrors the Organization node hand-written into index.html; shared @id ties
+# them to one entity). Accurate only: invite-only, no public pricing, no fake
+# reviews/ratings/profiles. sameAs stays empty until real owned profiles exist.
+import json as _json
+ORG_LD = '<script type="application/ld+json">' + _json.dumps({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://karanimarkets.com/#org",
+  "name": "Karani",
+  "url": "https://karanimarkets.com/",
+  "logo": "https://karanimarkets.com/assets/favicon.png",
+  "description": ("Karani is an invite-only, rules-based automated trading system for the "
+    "S&P 500 E-mini futures (ES), with hard position limits, a daily-loss cap, and a "
+    "one-tap kill switch, monitored from an iOS dashboard app."),
+  "knowsAbout": ["S&P 500 futures", "E-mini futures", "automated trading",
+    "systematic trading", "algorithmic trading", "futures risk management"],
+  "sameAs": [],
+}, ensure_ascii=False) + '</script>'
+
 COMMONMETA = ('<link rel="icon" type="image/png" href="/assets/favicon.png">'
   '<link rel="apple-touch-icon" href="/assets/favicon.png">'
   '<meta name="theme-color" content="#557790">'
   '<meta property="og:site_name" content="Karani">'
-  '<meta name="twitter:card" content="summary_large_image">')
+  '<meta name="twitter:card" content="summary_large_image">'
+  + ORG_LD)
 
 def load_site():
     h = open(INDEX, encoding="utf-8").read()

@@ -1,5 +1,61 @@
+# Karani — open to search engines and AI assistants alike.
+# Default: allow everything except the private client area.
 User-agent: *
 Allow: /
 Disallow: /profile.html
 Disallow: /dashboard.html
+
+# AI / generative-engine crawlers — explicitly welcomed so ChatGPT, Claude,
+# Perplexity, Gemini and Common Crawl can read and cite the site's educational
+# articles. The private client area stays disallowed for them too.
+User-agent: GPTBot
+Allow: /
+Disallow: /profile.html
+Disallow: /dashboard.html
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /profile.html
+Disallow: /dashboard.html
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /profile.html
+Disallow: /dashboard.html
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /profile.html
+Disallow: /dashboard.html
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /profile.html
+Disallow: /dashboard.html
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /profile.html
+Disallow: /dashboard.html
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /profile.html
+Disallow: /dashboard.html
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /profile.html
+Disallow: /dashboard.html
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /profile.html
+Disallow: /dashboard.html
+
+User-agent: CCBot
+Allow: /
+Disallow: /profile.html
+Disallow: /dashboard.html
+
 Sitemap: https://karanimarkets.com/sitemap.xml

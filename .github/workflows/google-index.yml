@@ -1,0 +1,34 @@
+name: Search-engine indexing ping
+
+# Notifies IndexNow (Bing/Yandex, always) + Google's Indexing API (when the
+# GOOGLE_INDEXING_SA_KEY secret is set) of all sitemap URLs so they (re)crawl
+# sooner. Runs daily + on demand. Manually trigger it after a big content push
+# via the Actions tab -> "Run workflow".
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 15 * * *" # daily 15:00 UTC (~1h after the blog auto-poster runs)
+
+permissions:
+  contents: read
+
+concurrency:
+  group: google-index
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Submit sitemap URLs to IndexNow + Google Indexing API
+        env:
+          GOOGLE_INDEXING_SA_KEY: ${{ secrets.GOOGLE_INDEXING_SA_KEY }}
+          SITEMAP_URL: https://karanimarkets.com/sitemap.xml
+        run: node scripts/google-index.mjs
