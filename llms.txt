@@ -11,6 +11,7 @@
 Note: Karani is not a course, signal service, or open sign-up. Enrollment is invite-only. Nothing on the site is financial advice; futures trading carries substantial risk of loss.
 
 ## Articles
+- [Apex Trader Funding: How Its Rules Work](https://karanimarkets.com/posts/apex-trader-funding-how-its-rules-work.html): Apex Trader Funding explained: how the one-step evaluation, trailing threshold, and payout split actually work, in plain numbers.
 - [Systematic Trading: Rules Over Discretion](https://karanimarkets.com/posts/systematic-trading-rules-over-discretion.html): Systematic trading replaces gut-feel decisions with fixed rules. What it is, how it differs from discretionary trading, and where the edge comes from.
 - [Risk Management in Futures: The Core Rules](https://karanimarkets.com/posts/risk-management-in-futures-the-core-rules.html): Risk management in futures trading means fixed per-trade risk, a daily loss cap, and sizing off notional value, not hope.
 - [Automated Futures Trading: How It Actually Runs](https://karanimarkets.com/posts/automated-futures-trading-how-it-actually-runs.html): How automated futures trading actually works: a rules engine placing ES orders, hard risk limits, and a kill switch. No passive income hype.
