@@ -385,6 +385,8 @@ footer{background:var(--night);color:#fff;margin-top:70px;padding:64px 0 34px}
         <label class="fld">Full name<input name="name" required placeholder="Your name"></label>
         <label class="fld">Email<input type="email" name="email" required placeholder="you@email.com"></label>
         <label class="fld">Anything we should know?<textarea name="msg" placeholder="Optional"></textarea></label>
+        <label class="hp" aria-hidden="true">Leave blank<input type="text" name="hp" tabindex="-1" autocomplete="off"></label>
+        <p class="merror" hidden></p>
         <button class="btn btn-brand mfull" type="submit">Request access</button>
       </form>
     </div>
@@ -406,13 +408,15 @@ footer{background:var(--night);color:#fff;margin-top:70px;padding:64px 0 34px}
         <label class="fld">Full name<input name="name" required placeholder="Your name"></label>
         <label class="fld">Email<input type="email" name="email" required placeholder="you@email.com"></label>
         <label class="fld">Message<textarea name="msg" required placeholder="How can we help?"></textarea></label>
+        <label class="hp" aria-hidden="true">Leave blank<input type="text" name="hp" tabindex="-1" autocomplete="off"></label>
+        <p class="merror" hidden></p>
         <button class="btn btn-brand mfull" type="submit">Send message</button>
       </form>
     </div>
     <div class="msuccess" hidden>
       <div class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
       <h3>Message sent</h3>
-      <p>Thanks for reaching out &mdash; we&#39;ll get back to you soon.</p>
+      <p>Thanks for reaching out. We&#39;ll get back to you soon.</p>
       <button class="btn btn-brand mfull" data-close>Done</button>
     </div>
   </div>
@@ -421,7 +425,7 @@ footer{background:var(--night);color:#fff;margin-top:70px;padding:64px 0 34px}
     <button class="mx" data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <div class="mlogo"><img class="mlogo-img" alt=""><b>Karani</b></div>
     <h3 id="at">About Karani</h3>
-    <p class="msub" style="margin-bottom:14px">Karani is a private, systematic trading system for the S&amp;P 500 futures (ES). It runs a backtested strategy automatically &mdash; with hard risk limits and a one-tap kill switch &mdash; built to operate hands-off while keeping its owner fully in control.</p>
+    <p class="msub" style="margin-bottom:14px">Karani is a private, systematic trading system for the S&amp;P 500 futures (ES). It runs a backtested strategy automatically, with hard risk limits and a one-tap kill switch, built to operate hands-off while keeping its owner fully in control.</p>
     <p class="msub">We work with a small, invitation-only group of clients. If you&#39;d like to be considered, you&#39;re welcome to <a href="#" data-modal="signup" style="color:var(--brand-deep);font-weight:600">request access</a>.</p>
     <button class="btn btn-brand mfull" data-close>Close</button>
   </div>
@@ -494,13 +498,71 @@ document.addEventListener('click',function(e){
 });
 mroot.addEventListener('click',function(e){if(e.target.classList.contains('mscrim'))closeModal();});
 addEventListener('keydown',function(e){if(e.key==='Escape'&&mroot.classList.contains('open'))closeModal();});
-// ---- form handling ----
+// ---- form handling (Web3Forms) ----
+var W3F_ENDPOINT='https://api.web3forms.com/submit', W3F_KEY='3f91cbf0-1c8b-4e2c-ac7f-f3228cf457f7';
+var W3F_SUBJECT={signup:'Karani lead',contact:'Karani contact'};
 document.addEventListener('submit',function(e){
   var f=e.target.closest('form[data-form]');if(!f)return;e.preventDefault();
   if(f.checkValidity&&!f.checkValidity()){if(f.reportValidity)f.reportValidity();return;}
   var kind=f.getAttribute('data-form'),card=f.closest('.mcard');
   if(kind==='login'){var n=card.querySelector('.mnotice');n.hidden=false;n.innerHTML='Access is by secure invitation link. Please open the link in your invitation email to reach your dashboard \u2014 or <a href=\"#\" data-modal=\"signup\" style=\"text-decoration:underline\">request access</a>.';return;}
-  var form=card.querySelector('.mform'),su=card.querySelector('.msuccess');
-  if(form&&su){form.hidden=true;su.hidden=false;var b=su.querySelector('button');setTimeout(function(){if(b)b.focus();},50);}
+  var hp=f.querySelector('input[name="hp"]');if(hp&&hp.value)return;
+  var form=card.querySelector('.mform'),su=card.querySelector('.msuccess'),err=f.querySelector('.merror');
+  var btn=f.querySelector('button[type="submit"]'),btxt=btn?btn.textContent:'';
+  if(btn){btn.disabled=true;btn.textContent='Sending...';}
+  if(err){err.hidden=true;err.textContent='';}
+  var fd=new FormData(f);
+  var name=(fd.get('name')||'').toString().trim(),email=(fd.get('email')||'').toString().trim(),msg=(fd.get('msg')||'').toString().trim();
+  var payload={access_key:W3F_KEY,subject:W3F_SUBJECT[kind]||'Karani website',
+    from_name:name+' via Karani '+(kind==='signup'?'access request':'contact form'),
+    name:name,email:email,message:msg||'(no message)'};
+  fetch(W3F_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload)})
+    .then(function(r){return r.json().catch(function(){return{};}).then(function(j){return{ok:r.ok&&!!j&&j.success===true};});})
+    .then(function(res){
+      if(btn){btn.disabled=false;btn.textContent=btxt;}
+      if(!res.ok)throw new Error('bad-status');
+      if(form&&su){form.hidden=true;su.hidden=false;var b=su.querySelector('button');setTimeout(function(){if(b)b.focus();},50);}
+    })
+    .catch(function(){
+      if(btn){btn.disabled=false;btn.textContent=btxt;}
+      if(err){err.hidden=false;err.textContent='Something went wrong sending that. Please try again in a moment.';}
+    });
 });
+
+// ---- live in-screen ticker for the mobile app mockup (.kapp) ----
+// Nudges the displayed balance + today's P&L by small amounts so the mockup
+// reads like a live account. Marketing mockup only, not real data.
+(function(){
+  var amtEl=document.querySelector('.kapp .kbal .amt');
+  var upEl=document.querySelector('.kapp .kbal .pnl .up');
+  if(!amtEl||!upEl)return;
+  // respect reduced-motion: leave the base values static
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var baseEquity=48920.40;      // starting account equity
+  var baseStart=baseEquity-312.60; // yesterday's close, so P&L = equity - start
+  var equity=baseEquity;
+  var fmt=function(n){return n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});};
+  // preserve the leading arrow svg inside .up; only swap the trailing text node
+  var upSvg=upEl.querySelector('svg');
+  function render(){
+    amtEl.textContent='$'+fmt(equity);
+    var pnl=equity-baseStart;
+    var pct=(pnl/baseStart)*100;
+    var txt=(pnl>=0?'+$':'-$')+fmt(Math.abs(pnl));
+    // rebuild .up: keep the svg, replace text
+    upEl.textContent='';
+    if(upSvg)upEl.appendChild(upSvg);
+    upEl.appendChild(document.createTextNode(txt));
+    var tEl=upEl.parentNode.querySelector('.t');
+    if(tEl)tEl.textContent=(pct>=0?'+':'')+pct.toFixed(2)+'% today';
+  }
+  setInterval(function(){
+    // small realistic drift, gently mean-reverting toward base so it stays believable
+    var drift=(Math.random()-0.5)*7.2;              // +/- ~$3.6 per tick
+    var pull=(baseEquity-equity)*0.06;              // ease back toward base
+    equity+=drift+pull;
+    render();
+  },2200);
+  render();
+})();
 </script></body></html>

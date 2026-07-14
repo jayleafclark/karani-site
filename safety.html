@@ -389,6 +389,8 @@ footer{background:var(--night);color:#fff;margin-top:70px;padding:64px 0 34px}
 .mfull{width:100%;justify-content:center;margin-top:4px}
 .mnotice{background:var(--terra-soft);border:1px solid rgba(206,129,104,.25);color:#9a5540;font-size:13px;line-height:1.55;border-radius:12px;padding:11px 13px;margin-top:2px}
 .mnotice a{color:inherit}
+.merror{background:var(--terra-soft);border:1px solid rgba(206,129,104,.25);color:#9a5540;font-size:13px;line-height:1.5;border-radius:12px;padding:10px 13px;margin-top:2px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .mfoot{font-size:13px;color:var(--ink2);text-align:center;margin-top:16px}
 .mfoot a{color:var(--brand-deep);font-weight:600}
 .msuccess{text-align:center;padding:8px 4px 2px}
@@ -748,6 +750,8 @@ footer{background:var(--night);color:#fff;margin-top:70px;padding:64px 0 34px}
         <label class="fld">Full name<input name="name" required placeholder="Your name"></label>
         <label class="fld">Email<input type="email" name="email" required placeholder="you@email.com"></label>
         <label class="fld">Anything we should know?<textarea name="msg" placeholder="Optional"></textarea></label>
+        <label class="hp" aria-hidden="true">Leave blank<input type="text" name="hp" tabindex="-1" autocomplete="off"></label>
+        <p class="merror" hidden></p>
         <button class="btn btn-brand mfull" type="submit">Request access</button>
       </form>
     </div>
@@ -769,6 +773,8 @@ footer{background:var(--night);color:#fff;margin-top:70px;padding:64px 0 34px}
         <label class="fld">Full name<input name="name" required placeholder="Your name"></label>
         <label class="fld">Email<input type="email" name="email" required placeholder="you@email.com"></label>
         <label class="fld">Message<textarea name="msg" required placeholder="How can we help?"></textarea></label>
+        <label class="hp" aria-hidden="true">Leave blank<input type="text" name="hp" tabindex="-1" autocomplete="off"></label>
+        <p class="merror" hidden></p>
         <button class="btn btn-brand mfull" type="submit">Send message</button>
       </form>
     </div>
@@ -857,14 +863,35 @@ document.addEventListener('click',function(e){
 });
 mroot.addEventListener('click',function(e){if(e.target.classList.contains('mscrim'))closeModal();});
 addEventListener('keydown',function(e){if(e.key==='Escape'&&mroot.classList.contains('open'))closeModal();});
-// ---- form handling ----
+// ---- form handling (Web3Forms) ----
+var W3F_ENDPOINT='https://api.web3forms.com/submit', W3F_KEY='3f91cbf0-1c8b-4e2c-ac7f-f3228cf457f7';
+var W3F_SUBJECT={signup:'Karani lead',contact:'Karani contact'};
 document.addEventListener('submit',function(e){
   var f=e.target.closest('form[data-form]');if(!f)return;e.preventDefault();
   if(f.checkValidity&&!f.checkValidity()){if(f.reportValidity)f.reportValidity();return;}
   var kind=f.getAttribute('data-form'),card=f.closest('.mcard');
   if(kind==='login'){var n=card.querySelector('.mnotice');n.hidden=false;n.innerHTML='Access is by secure invitation link. Please open the link in your invitation email to reach your dashboard \u2014 or <a href=\"#\" data-modal=\"signup\" style=\"text-decoration:underline\">request access</a>.';return;}
-  var form=card.querySelector('.mform'),su=card.querySelector('.msuccess');
-  if(form&&su){form.hidden=true;su.hidden=false;var b=su.querySelector('button');setTimeout(function(){if(b)b.focus();},50);}
+  var hp=f.querySelector('input[name="hp"]');if(hp&&hp.value)return;
+  var form=card.querySelector('.mform'),su=card.querySelector('.msuccess'),err=f.querySelector('.merror');
+  var btn=f.querySelector('button[type="submit"]'),btxt=btn?btn.textContent:'';
+  if(btn){btn.disabled=true;btn.textContent='Sending...';}
+  if(err){err.hidden=true;err.textContent='';}
+  var fd=new FormData(f);
+  var name=(fd.get('name')||'').toString().trim(),email=(fd.get('email')||'').toString().trim(),msg=(fd.get('msg')||'').toString().trim();
+  var payload={access_key:W3F_KEY,subject:W3F_SUBJECT[kind]||'Karani website',
+    from_name:name+' via Karani '+(kind==='signup'?'access request':'contact form'),
+    name:name,email:email,message:msg||'(no message)'};
+  fetch(W3F_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload)})
+    .then(function(r){return r.json().catch(function(){return{};}).then(function(j){return{ok:r.ok&&!!j&&j.success===true};});})
+    .then(function(res){
+      if(btn){btn.disabled=false;btn.textContent=btxt;}
+      if(!res.ok)throw new Error('bad-status');
+      if(form&&su){form.hidden=true;su.hidden=false;var b=su.querySelector('button');setTimeout(function(){if(b)b.focus();},50);}
+    })
+    .catch(function(){
+      if(btn){btn.disabled=false;btn.textContent=btxt;}
+      if(err){err.hidden=false;err.textContent='Something went wrong sending that. Please try again in a moment.';}
+    });
 });
 
 // ---- live in-screen ticker for the mobile app mockup (.kapp) ----
