@@ -73,7 +73,7 @@ def build_llms(log):
         f"- [How it works]({SITE}/how-it-works.html): the tested-strategy, paper-first, hard-risk-limits approach.",
         f"- [Safety]({SITE}/safety.html): position caps, daily-loss cap, and the kill switch the client controls.",
         f"- [Dashboard]({SITE}/platform.html): the iOS app for monitoring balance, equity, trades, and system status.",
-        f"- [Client login]({SITE}/profile.html): existing clients access the dashboard in the iOS app.",
+        "- [Client login](https://app.karanimarkets.com/sign-in): existing clients sign in to the dashboard directly, or access it in the iOS app.",
         "",
         "Note: Karani is not a course, signal service, or open sign-up. Enrollment is invite-only. "
         "Nothing on the site is financial advice; futures trading carries substantial risk of loss.",

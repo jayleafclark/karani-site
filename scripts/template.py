@@ -107,7 +107,7 @@ def nav(navy, active=""):
       '<a href="/platform.html"'+cls("platform")+'>Dashboard</a>'
       '<a href="/blog.html"'+cls("blog")+'>Blog</a>'
       '</nav>'
-      '<div class="cta"><a class="btn btn-ghost navlogin" href="/profile.html">Client login</a>'
+      '<div class="cta"><a class="btn btn-ghost navlogin" href="https://app.karanimarkets.com/sign-in">Client login</a>'
       '<button class="btn btn-brand" data-modal="signup">Request access '+ARROW+'</button></div>'
       '<button class="btn btn-brand navpill" data-modal="signup">Request access</button>'
       '<button class="menu-btn" aria-label="Open menu" onclick="openNav()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>'
@@ -115,7 +115,7 @@ def nav(navy, active=""):
       '<div class="mnav" id="mnav" aria-hidden="true">'
       '<button class="mclose" aria-label="Close menu" onclick="closeNav()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>'
       '<a href="/">Home</a><a href="/how-it-works.html">How it works</a><a href="/safety.html">Safety</a><a href="/platform.html">Dashboard</a><a href="/blog.html">Blog</a>'
-      '<a href="/profile.html">Client login</a>'
+      '<a href="https://app.karanimarkets.com/sign-in">Client login</a>'
       '<button class="mcta" data-modal="signup" onclick="closeNav()">Request access</button></div>')
 
 def footer(cream):
@@ -124,7 +124,7 @@ def footer(cream):
       '<p>A disciplined, automated trading system for the S&amp;P 500 futures, built to run hands-off, with you in control.</p></div>'
       '<div class="fcol"><h5>Product</h5><a href="/how-it-works.html">How it works</a><a href="/safety.html">Safety</a><a href="/platform.html">Dashboard</a><a href="/blog.html">Blog</a></div>'
       '<div class="fcol"><h5>Company</h5><a href="/about.html">About</a><a href="#" data-modal="pricing">Pricing</a><a href="#" data-modal="contact">Contact</a></div>'
-      '<div class="fcol"><h5>Account</h5><a href="/profile.html">Client login</a><a href="#" data-modal="signup">Request access</a></div>'
+      '<div class="fcol"><h5>Account</h5><a href="https://app.karanimarkets.com/sign-in">Client login</a><a href="#" data-modal="signup">Request access</a></div>'
       '</div><div class="foot-bottom">'
       '<p class="disc">Trading futures involves substantial risk of loss and is not suitable for every investor. Nothing here is financial advice. Past performance is not indicative of future results.</p>'
       '<span class="cp">&copy; 2026 Karani</span></div></div></footer>')
