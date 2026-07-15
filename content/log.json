@@ -190,5 +190,17 @@
     "read_time": "7 min read",
     "date": "2026-07-13",
     "url": "/posts/apex-trader-funding-how-its-rules-work.html"
+  },
+  {
+    "slug": "calmar-ratio-return-against-max-drawdown",
+    "keyword": "calmar ratio",
+    "title": "Calmar Ratio: Return Against Max Drawdown",
+    "category": "Backtesting & Data",
+    "kd": 0,
+    "sv": 880,
+    "excerpt": "Calmar ratio measures return against max drawdown, exposing strategies that look strong on CAGR alone. Formula, example, and limits explained.",
+    "read_time": "7 min read",
+    "date": "2026-07-15",
+    "url": "/posts/calmar-ratio-return-against-max-drawdown.html"
   }
 ]
