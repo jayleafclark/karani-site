@@ -202,5 +202,17 @@
     "read_time": "7 min read",
     "date": "2026-07-15",
     "url": "/posts/calmar-ratio-return-against-max-drawdown.html"
+  },
+  {
+    "slug": "futures-vs-forex-fees-regulation-depth",
+    "keyword": "futures vs forex",
+    "title": "Futures vs Forex: Fees, Regulation, Depth",
+    "category": "Comparisons",
+    "kd": 0,
+    "sv": 720,
+    "excerpt": "Futures vs forex compared: how CME futures fees, regulation, and market depth differ from decentralized spot forex trading.",
+    "read_time": "7 min read",
+    "date": "2026-07-17",
+    "url": "/posts/futures-vs-forex-fees-regulation-depth.html"
   }
 ]
