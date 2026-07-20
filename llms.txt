@@ -11,6 +11,7 @@
 Note: Karani is not a course, signal service, or open sign-up. Enrollment is invite-only. Nothing on the site is financial advice; futures trading carries substantial risk of loss.
 
 ## Articles
+- [Volume vs Open Interest: Two Different Signals](https://karanimarkets.com/posts/volume-vs-open-interest-two-different-signals.html): Volume vs open interest in futures: volume counts trades made, open interest counts contracts still open. Here's how to read both correctly.
 - [Futures vs Forex: Fees, Regulation, Depth](https://karanimarkets.com/posts/futures-vs-forex-fees-regulation-depth.html): Futures vs forex compared: how CME futures fees, regulation, and market depth differ from decentralized spot forex trading.
 - [Calmar Ratio: Return Against Max Drawdown](https://karanimarkets.com/posts/calmar-ratio-return-against-max-drawdown.html): Calmar ratio measures return against max drawdown, exposing strategies that look strong on CAGR alone. Formula, example, and limits explained.
 - [Apex Trader Funding: How Its Rules Work](https://karanimarkets.com/posts/apex-trader-funding-how-its-rules-work.html): Apex Trader Funding explained: how the one-step evaluation, trailing threshold, and payout split actually work, in plain numbers.

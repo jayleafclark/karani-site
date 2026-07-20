@@ -214,5 +214,17 @@
     "read_time": "7 min read",
     "date": "2026-07-17",
     "url": "/posts/futures-vs-forex-fees-regulation-depth.html"
+  },
+  {
+    "slug": "volume-vs-open-interest-two-different-signals",
+    "keyword": "volume vs open interest",
+    "title": "Volume vs Open Interest: Two Different Signals",
+    "category": "Comparisons",
+    "kd": 0,
+    "sv": 720,
+    "excerpt": "Volume vs open interest in futures: volume counts trades made, open interest counts contracts still open. Here's how to read both correctly.",
+    "read_time": "7 min read",
+    "date": "2026-07-20",
+    "url": "/posts/volume-vs-open-interest-two-different-signals.html"
   }
 ]
