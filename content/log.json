@@ -238,5 +238,17 @@
     "read_time": "7 min read",
     "date": "2026-07-22",
     "url": "/posts/quantitative-trading-what-it-means-for-retail.html"
+  },
+  {
+    "slug": "what-is-copy-trading-and-its-limits",
+    "keyword": "what is copy trading",
+    "title": "What Is Copy Trading? And Its Limits",
+    "category": "Glossary",
+    "kd": 3,
+    "sv": 1600,
+    "excerpt": "What is copy trading? A plain explanation of how trade mirroring works, why past results mislead, and the sizing mismatch that hurts followers.",
+    "read_time": "7 min read",
+    "date": "2026-07-24",
+    "url": "/posts/what-is-copy-trading-and-its-limits.html"
   }
 ]
