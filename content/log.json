@@ -286,5 +286,17 @@
     "read_time": "7 min read",
     "date": "2026-07-31",
     "url": "/posts/how-to-get-started-day-trading-futures.html"
+  },
+  {
+    "slug": "python-algorithmic-trading-a-first-strategy",
+    "keyword": "python algorithmic trading",
+    "title": "Python Algorithmic Trading: A First Strategy",
+    "category": "Automated Trading",
+    "kd": 2,
+    "sv": 880,
+    "excerpt": "Learn python algorithmic trading by coding a simple ES moving-average rule, backtesting it, and seeing why overfitting wrecks untested strategies.",
+    "read_time": "7 min read",
+    "date": "2026-08-03",
+    "url": "/posts/python-algorithmic-trading-a-first-strategy.html"
   }
 ]

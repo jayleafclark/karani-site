@@ -11,6 +11,7 @@
 Note: Karani is not a course, signal service, or open sign-up. Enrollment is invite-only. Nothing on the site is financial advice; futures trading carries substantial risk of loss.
 
 ## Articles
+- [Python Algorithmic Trading: A First Strategy](https://karanimarkets.com/posts/python-algorithmic-trading-a-first-strategy.html): Learn python algorithmic trading by coding a simple ES moving-average rule, backtesting it, and seeing why overfitting wrecks untested strategies.
 - [How to Get Started Day Trading Futures](https://karanimarkets.com/posts/how-to-get-started-day-trading-futures.html): How to get started day trading futures: pick a liquid contract like MES, a platform, a data feed, and written rules before risking money.
 - [What Is Maintenance Margin? The Trigger Level](https://karanimarkets.com/posts/what-is-maintenance-margin-the-trigger-level.html): What is maintenance margin in futures trading? The account balance level that triggers a margin call, explained with ES examples.
 - [Discretionary Trading: Strengths and Blind Spots](https://karanimarkets.com/posts/discretionary-trading-strengths-and-blind-spots.html): What discretionary trading is, where human judgment helps, where it costs money, and how a checklist narrows the gap to a system.
