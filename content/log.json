@@ -298,5 +298,17 @@
     "read_time": "7 min read",
     "date": "2026-08-03",
     "url": "/posts/python-algorithmic-trading-a-first-strategy.html"
+  },
+  {
+    "slug": "head-and-shoulders-pattern-a-testable-definition",
+    "keyword": "head and shoulders pattern",
+    "title": "Head and Shoulders Pattern: A Testable Definition",
+    "category": "Glossary",
+    "kd": 22,
+    "sv": 12100,
+    "excerpt": "A precise, testable definition of the head and shoulders pattern: the neckline trigger, measured move, and how to code the rules instead of eyeballing a chart.",
+    "read_time": "7 min read",
+    "date": "2026-08-05",
+    "url": "/posts/head-and-shoulders-pattern-a-testable-definition.html"
   }
 ]
