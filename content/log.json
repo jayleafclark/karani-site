@@ -322,5 +322,17 @@
     "read_time": "8 min read",
     "date": "2026-08-07",
     "url": "/posts/ninjatrader-vs-tradovate-which-platform-fits.html"
+  },
+  {
+    "slug": "oco-orders-one-cancels-the-other",
+    "keyword": "oco order",
+    "title": "OCO Orders: One Cancels the Other",
+    "category": "Glossary",
+    "kd": 0,
+    "sv": 390,
+    "excerpt": "What an OCO order is and how it pairs a stop and a target on ES futures so filling one cancels the other automatically.",
+    "read_time": "6 min read",
+    "date": "2026-08-10",
+    "url": "/posts/oco-orders-one-cancels-the-other.html"
   }
 ]

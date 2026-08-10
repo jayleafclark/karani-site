@@ -11,6 +11,7 @@
 Note: Karani is not a course, signal service, or open sign-up. Enrollment is invite-only. Nothing on the site is financial advice; futures trading carries substantial risk of loss.
 
 ## Articles
+- [OCO Orders: One Cancels the Other](https://karanimarkets.com/posts/oco-orders-one-cancels-the-other.html): What an OCO order is and how it pairs a stop and a target on ES futures so filling one cancels the other automatically.
 - [NinjaTrader vs Tradovate: Which Platform Fits](https://karanimarkets.com/posts/ninjatrader-vs-tradovate-which-platform-fits.html): NinjaTrader vs Tradovate compared on charting depth, order-flow tools, pricing, and access, so you can match the platform to how you actually trade.
 - [Head and Shoulders Pattern: A Testable Definition](https://karanimarkets.com/posts/head-and-shoulders-pattern-a-testable-definition.html): A precise, testable definition of the head and shoulders pattern: the neckline trigger, measured move, and how to code the rules instead of eyeballing a chart.
 - [Python Algorithmic Trading: A First Strategy](https://karanimarkets.com/posts/python-algorithmic-trading-a-first-strategy.html): Learn python algorithmic trading by coding a simple ES moving-average rule, backtesting it, and seeing why overfitting wrecks untested strategies.
