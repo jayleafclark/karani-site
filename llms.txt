@@ -11,6 +11,7 @@
 Note: Karani is not a course, signal service, or open sign-up. Enrollment is invite-only. Nothing on the site is financial advice; futures trading carries substantial risk of loss.
 
 ## Articles
+- [AMP Futures: Low-Cost FCM Access](https://karanimarkets.com/posts/amp-futures-low-cost-fcm-access.html): AMP Futures is a non-clearing FCM known for low day-margins, broad platform support, and Rithmic connectivity. Here's how it actually works.
 - [Futures Trading Taxes: The 60/40 Rule](https://karanimarkets.com/posts/futures-trading-taxes-the-60-40-rule.html): Futures trading taxes explained: how Section 1256 and the 60/40 rule tax gains differently than stocks, with mark-to-market rules.
 - [OCO Orders: One Cancels the Other](https://karanimarkets.com/posts/oco-orders-one-cancels-the-other.html): What an OCO order is and how it pairs a stop and a target on ES futures so filling one cancels the other automatically.
 - [NinjaTrader vs Tradovate: Which Platform Fits](https://karanimarkets.com/posts/ninjatrader-vs-tradovate-which-platform-fits.html): NinjaTrader vs Tradovate compared on charting depth, order-flow tools, pricing, and access, so you can match the platform to how you actually trade.

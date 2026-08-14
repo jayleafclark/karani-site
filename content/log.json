@@ -346,5 +346,17 @@
     "read_time": "7 min read",
     "date": "2026-08-12",
     "url": "/posts/futures-trading-taxes-the-60-40-rule.html"
+  },
+  {
+    "slug": "amp-futures-low-cost-fcm-access",
+    "keyword": "amp futures",
+    "title": "AMP Futures: Low-Cost FCM Access",
+    "category": "Brokers & Platforms",
+    "kd": 23,
+    "sv": 9900,
+    "excerpt": "AMP Futures is a non-clearing FCM known for low day-margins, broad platform support, and Rithmic connectivity. Here's how it actually works.",
+    "read_time": "7 min read",
+    "date": "2026-08-14",
+    "url": "/posts/amp-futures-low-cost-fcm-access.html"
   }
 ]
