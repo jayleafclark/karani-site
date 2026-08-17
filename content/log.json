@@ -358,5 +358,17 @@
     "read_time": "7 min read",
     "date": "2026-08-14",
     "url": "/posts/amp-futures-low-cost-fcm-access.html"
+  },
+  {
+    "slug": "what-is-paper-trading-its-real-limits",
+    "keyword": "what is paper trading",
+    "title": "What Is Paper Trading? Its Real Limits",
+    "category": "Glossary",
+    "kd": 16,
+    "sv": 5400,
+    "excerpt": "What is paper trading? A clear look at simulated trading, why fills look better than reality, and how to close the gap before going live.",
+    "read_time": "7 min read",
+    "date": "2026-08-17",
+    "url": "/posts/what-is-paper-trading-its-real-limits.html"
   }
 ]
