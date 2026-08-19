@@ -370,5 +370,17 @@
     "read_time": "7 min read",
     "date": "2026-08-17",
     "url": "/posts/what-is-paper-trading-its-real-limits.html"
+  },
+  {
+    "slug": "nasdaq-100-futures-nq-vs-mnq-sizing",
+    "keyword": "nasdaq 100 futures",
+    "title": "Nasdaq-100 Futures: NQ vs MNQ Sizing",
+    "category": "ES Mechanics",
+    "kd": 49,
+    "sv": 33100,
+    "excerpt": "Nasdaq 100 futures explained: NQ and MNQ point values, tick sizes, and why the index's tech concentration drives bigger daily swings.",
+    "read_time": "7 min read",
+    "date": "2026-08-19",
+    "url": "/posts/nasdaq-100-futures-nq-vs-mnq-sizing.html"
   }
 ]
