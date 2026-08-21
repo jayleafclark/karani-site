@@ -11,6 +11,7 @@
 Note: Karani is not a course, signal service, or open sign-up. Enrollment is invite-only. Nothing on the site is financial advice; futures trading carries substantial risk of loss.
 
 ## Articles
+- [Double Top Pattern: Rules and False Signals](https://karanimarkets.com/posts/double-top-pattern-rules-and-false-signals.html): What a double top pattern is, the exact rules that define one, and the confirmation that filters out the common false break.
 - [Nasdaq-100 Futures: NQ vs MNQ Sizing](https://karanimarkets.com/posts/nasdaq-100-futures-nq-vs-mnq-sizing.html): Nasdaq 100 futures explained: NQ and MNQ point values, tick sizes, and why the index's tech concentration drives bigger daily swings.
 - [What Is Paper Trading? Its Real Limits](https://karanimarkets.com/posts/what-is-paper-trading-its-real-limits.html): What is paper trading? A clear look at simulated trading, why fills look better than reality, and how to close the gap before going live.
 - [AMP Futures: Low-Cost FCM Access](https://karanimarkets.com/posts/amp-futures-low-cost-fcm-access.html): AMP Futures is a non-clearing FCM known for low day-margins, broad platform support, and Rithmic connectivity. Here's how it actually works.
