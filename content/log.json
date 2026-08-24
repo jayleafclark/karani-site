@@ -394,5 +394,17 @@
     "read_time": "7 min read",
     "date": "2026-08-21",
     "url": "/posts/double-top-pattern-rules-and-false-signals.html"
+  },
+  {
+    "slug": "limit-order-vs-market-order-on-futures",
+    "keyword": "limit order vs market order",
+    "title": "Limit Order vs Market Order on Futures",
+    "category": "Comparisons",
+    "kd": 15,
+    "sv": 4400,
+    "excerpt": "Limit order vs market order on ES futures: guaranteed fill vs guaranteed price, and how to pick the right one on a fast tape.",
+    "read_time": "7 min read",
+    "date": "2026-08-24",
+    "url": "/posts/limit-order-vs-market-order-on-futures.html"
   }
 ]
