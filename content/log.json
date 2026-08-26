@@ -406,5 +406,17 @@
     "read_time": "7 min read",
     "date": "2026-08-24",
     "url": "/posts/limit-order-vs-market-order-on-futures.html"
+  },
+  {
+    "slug": "ai-trading-what-it-can-and-cant-do",
+    "keyword": "ai trading",
+    "title": "AI Trading: What It Can and Can't Do",
+    "category": "Automated Trading",
+    "kd": 36,
+    "sv": 18100,
+    "excerpt": "AI trading explained: what machine learning models actually do in futures markets, and why data limits and overfitting cap their edge.",
+    "read_time": "7 min read",
+    "date": "2026-08-26",
+    "url": "/posts/ai-trading-what-it-can-and-cant-do.html"
   }
 ]
