@@ -418,5 +418,17 @@
     "read_time": "7 min read",
     "date": "2026-08-26",
     "url": "/posts/ai-trading-what-it-can-and-cant-do.html"
+  },
+  {
+    "slug": "trading-vs-investing-horizon-and-edge",
+    "keyword": "trading vs investing",
+    "title": "Trading vs Investing: Horizon and Edge",
+    "category": "Foundations",
+    "kd": 6,
+    "sv": 1300,
+    "excerpt": "Trading vs investing differ in holding period and source of return. See the real mechanics and where systematic futures trading fits.",
+    "read_time": "6 min read",
+    "date": "2026-08-28",
+    "url": "/posts/trading-vs-investing-horizon-and-edge.html"
   }
 ]
