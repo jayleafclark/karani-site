@@ -430,5 +430,17 @@
     "read_time": "6 min read",
     "date": "2026-08-28",
     "url": "/posts/trading-vs-investing-horizon-and-edge.html"
+  },
+  {
+    "slug": "vwap-trading-strategy-for-intraday-es",
+    "keyword": "vwap trading strategy",
+    "title": "VWAP Trading Strategy for Intraday ES",
+    "category": "Systematic Strategy",
+    "kd": 0,
+    "sv": 260,
+    "excerpt": "A plain-English guide to the VWAP trading strategy for ES futures: what VWAP measures, how to use it as a bias line, and the reversion and continuation setups traders build around it.",
+    "read_time": "7 min read",
+    "date": "2026-08-31",
+    "url": "/posts/vwap-trading-strategy-for-intraday-es.html"
   }
 ]
