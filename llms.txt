@@ -11,6 +11,7 @@
 Note: Karani is not a course, signal service, or open sign-up. Enrollment is invite-only. Nothing on the site is financial advice; futures trading carries substantial risk of loss.
 
 ## Articles
+- [NQ Futures: Nasdaq-100 E-mini Specs](https://karanimarkets.com/posts/nq-futures-nasdaq-100-e-mini-specs.html): NQ futures explained: Nasdaq-100 E-mini specs, the $20 multiplier, tick value, and how its volatility compares to ES.
 - [VWAP Trading Strategy for Intraday ES](https://karanimarkets.com/posts/vwap-trading-strategy-for-intraday-es.html): A plain-English guide to the VWAP trading strategy for ES futures: what VWAP measures, how to use it as a bias line, and the reversion and continuation setups traders build around it.
 - [Trading vs Investing: Horizon and Edge](https://karanimarkets.com/posts/trading-vs-investing-horizon-and-edge.html): Trading vs investing differ in holding period and source of return. See the real mechanics and where systematic futures trading fits.
 - [AI Trading: What It Can and Can't Do](https://karanimarkets.com/posts/ai-trading-what-it-can-and-cant-do.html): AI trading explained: what machine learning models actually do in futures markets, and why data limits and overfitting cap their edge.

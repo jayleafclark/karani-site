@@ -442,5 +442,17 @@
     "read_time": "7 min read",
     "date": "2026-08-31",
     "url": "/posts/vwap-trading-strategy-for-intraday-es.html"
+  },
+  {
+    "slug": "nq-futures-nasdaq-100-e-mini-specs",
+    "keyword": "nq futures",
+    "title": "NQ Futures: Nasdaq-100 E-mini Specs",
+    "category": "ES Mechanics",
+    "kd": 33,
+    "sv": 14800,
+    "excerpt": "NQ futures explained: Nasdaq-100 E-mini specs, the $20 multiplier, tick value, and how its volatility compares to ES.",
+    "read_time": "7 min read",
+    "date": "2026-09-02",
+    "url": "/posts/nq-futures-nasdaq-100-e-mini-specs.html"
   }
 ]
