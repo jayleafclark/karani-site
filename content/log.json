@@ -454,5 +454,17 @@
     "read_time": "7 min read",
     "date": "2026-09-02",
     "url": "/posts/nq-futures-nasdaq-100-e-mini-specs.html"
+  },
+  {
+    "slug": "leading-vs-lagging-indicators-the-trade-off",
+    "keyword": "leading vs lagging indicators",
+    "title": "Leading vs Lagging Indicators: The Trade-off",
+    "category": "Comparisons",
+    "kd": 11,
+    "sv": 2400,
+    "excerpt": "Leading vs lagging indicators explained: what each measures, the speed-for-confirmation trade-off, and how to combine them without redundancy.",
+    "read_time": "7 min read",
+    "date": "2026-09-07",
+    "url": "/posts/leading-vs-lagging-indicators-the-trade-off.html"
   }
 ]
