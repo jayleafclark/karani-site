@@ -478,5 +478,17 @@
     "read_time": "7 min read",
     "date": "2026-09-09",
     "url": "/posts/funded-trading-accounts-what-you-really-get.html"
+  },
+  {
+    "slug": "quantconnect-for-futures-backtesting",
+    "keyword": "quantconnect",
+    "title": "QuantConnect for Futures Backtesting",
+    "category": "Backtesting & Data",
+    "kd": 25,
+    "sv": 8100,
+    "excerpt": "What QuantConnect offers for ES futures backtesting: data, contract handling, and the real workflow from backtest to paper trade.",
+    "read_time": "7 min read",
+    "date": "2026-09-11",
+    "url": "/posts/quantconnect-for-futures-backtesting.html"
   }
 ]
