@@ -11,6 +11,7 @@
 Note: Karani is not a course, signal service, or open sign-up. Enrollment is invite-only. Nothing on the site is financial advice; futures trading carries substantial risk of loss.
 
 ## Articles
+- [Is AI Trading Profitable? Cut Through the Hype](https://karanimarkets.com/posts/is-ai-trading-profitable-cut-through-the-hype.html): Is AI trading profitable? An honest look at where machine learning helps in trading systems, and why most AI trading claims fail out-of-sample.
 - [QuantConnect for Futures Backtesting](https://karanimarkets.com/posts/quantconnect-for-futures-backtesting.html): What QuantConnect offers for ES futures backtesting: data, contract handling, and the real workflow from backtest to paper trade.
 - [Funded Trading Accounts: What You Really Get](https://karanimarkets.com/posts/funded-trading-accounts-what-you-really-get.html): What a funded trading account really gives you: simulated vs live capital, the payout process, and the rules that can close it.
 - [Leading vs Lagging Indicators: The Trade-off](https://karanimarkets.com/posts/leading-vs-lagging-indicators-the-trade-off.html): Leading vs lagging indicators explained: what each measures, the speed-for-confirmation trade-off, and how to combine them without redundancy.

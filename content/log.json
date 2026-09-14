@@ -490,5 +490,17 @@
     "read_time": "7 min read",
     "date": "2026-09-11",
     "url": "/posts/quantconnect-for-futures-backtesting.html"
+  },
+  {
+    "slug": "is-ai-trading-profitable-cut-through-the-hype",
+    "keyword": "is ai trading profitable",
+    "title": "Is AI Trading Profitable? Cut Through the Hype",
+    "category": "Automated Trading",
+    "kd": 0,
+    "sv": 210,
+    "excerpt": "Is AI trading profitable? An honest look at where machine learning helps in trading systems, and why most AI trading claims fail out-of-sample.",
+    "read_time": "7 min read",
+    "date": "2026-09-14",
+    "url": "/posts/is-ai-trading-profitable-cut-through-the-hype.html"
   }
 ]
