@@ -502,5 +502,17 @@
     "read_time": "7 min read",
     "date": "2026-09-14",
     "url": "/posts/is-ai-trading-profitable-cut-through-the-hype.html"
+  },
+  {
+    "slug": "breakout-trading-strategy-for-index-futures",
+    "keyword": "breakout trading strategy",
+    "title": "Breakout Trading Strategy for Index Futures",
+    "category": "Systematic Strategy",
+    "kd": 0,
+    "sv": 210,
+    "excerpt": "How a breakout trading strategy works on ES futures, why false breakouts happen, and how volume and range filters separate signal from noise.",
+    "read_time": "7 min read",
+    "date": "2026-09-16",
+    "url": "/posts/breakout-trading-strategy-for-index-futures.html"
   }
 ]
