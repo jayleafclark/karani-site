@@ -514,5 +514,17 @@
     "read_time": "7 min read",
     "date": "2026-09-16",
     "url": "/posts/breakout-trading-strategy-for-index-futures.html"
+  },
+  {
+    "slug": "scalping-futures-why-costs-decide-it",
+    "keyword": "scalping futures",
+    "title": "Scalping Futures: Why Costs Decide It",
+    "category": "Systematic Strategy",
+    "kd": 0,
+    "sv": 210,
+    "excerpt": "Scalping futures explained: how tick trades on ES work, and why commissions and slippage usually decide net results more than the entry signal.",
+    "read_time": "7 min read",
+    "date": "2026-09-18",
+    "url": "/posts/scalping-futures-why-costs-decide-it.html"
   }
 ]
