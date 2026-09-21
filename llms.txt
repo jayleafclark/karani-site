@@ -11,6 +11,7 @@
 Note: Karani is not a course, signal service, or open sign-up. Enrollment is invite-only. Nothing on the site is financial advice; futures trading carries substantial risk of loss.
 
 ## Articles
+- [A Trading Checklist That Filters Bad Trades](https://karanimarkets.com/posts/a-trading-checklist-that-filters-bad-trades.html): What a trading checklist is and why it works: a pre-trade filter for setup, stop, size, and news that blocks impulse trades.
 - [Scalping Futures: Why Costs Decide It](https://karanimarkets.com/posts/scalping-futures-why-costs-decide-it.html): Scalping futures explained: how tick trades on ES work, and why commissions and slippage usually decide net results more than the entry signal.
 - [Breakout Trading Strategy for Index Futures](https://karanimarkets.com/posts/breakout-trading-strategy-for-index-futures.html): How a breakout trading strategy works on ES futures, why false breakouts happen, and how volume and range filters separate signal from noise.
 - [Is AI Trading Profitable? Cut Through the Hype](https://karanimarkets.com/posts/is-ai-trading-profitable-cut-through-the-hype.html): Is AI trading profitable? An honest look at where machine learning helps in trading systems, and why most AI trading claims fail out-of-sample.
