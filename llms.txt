@@ -11,6 +11,7 @@
 Note: Karani is not a course, signal service, or open sign-up. Enrollment is invite-only. Nothing on the site is financial advice; futures trading carries substantial risk of loss.
 
 ## Articles
+- [How Are Futures Taxed? Section 1256 Basics](https://karanimarkets.com/posts/how-are-futures-taxed-section-1256-basics.html): How are futures taxed? A plain-English guide to Section 1256, the 60/40 blended rate, and year-end mark-to-market rules.
 - [Are Prop Firms Legit? How to Vet One](https://karanimarkets.com/posts/are-prop-firms-legit-how-to-vet-one.html): Are prop firms legit? Most are real businesses, but quality varies. Learn how to check payout proof, rules, and reviews before you pay for one.
 - [A Trading Checklist That Filters Bad Trades](https://karanimarkets.com/posts/a-trading-checklist-that-filters-bad-trades.html): What a trading checklist is and why it works: a pre-trade filter for setup, stop, size, and news that blocks impulse trades.
 - [Scalping Futures: Why Costs Decide It](https://karanimarkets.com/posts/scalping-futures-why-costs-decide-it.html): Scalping futures explained: how tick trades on ES work, and why commissions and slippage usually decide net results more than the entry signal.
