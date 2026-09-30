@@ -585,7 +585,7 @@
     "slug": "sortino-ratio-sharpe-that-ignores-upside-swings",
     "title": "Sortino Ratio: Sharpe That Ignores Upside Swings",
     "angle": "Explain penalizing only downside volatility and why it can flatter a strategy over Sharpe.",
-    "status": "pending"
+    "status": "published"
   },
   {
     "keyword": "how to read a candlestick chart",

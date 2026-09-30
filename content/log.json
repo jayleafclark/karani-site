@@ -574,5 +574,17 @@
     "read_time": "7 min read",
     "date": "2026-09-28",
     "url": "/posts/prop-firm-challenge-reading-the-rules-first.html"
+  },
+  {
+    "slug": "sortino-ratio-sharpe-that-ignores-upside-swings",
+    "keyword": "sortino ratio",
+    "title": "Sortino Ratio: Sharpe That Ignores Upside Swings",
+    "category": "Glossary",
+    "kd": 17,
+    "sv": 3600,
+    "excerpt": "The Sortino ratio measures risk-adjusted return using only downside volatility, unlike the Sharpe ratio, which penalizes all price swings equally.",
+    "read_time": "6 min read",
+    "date": "2026-09-30",
+    "url": "/posts/sortino-ratio-sharpe-that-ignores-upside-swings.html"
   }
 ]
