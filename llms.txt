@@ -11,6 +11,7 @@
 Note: Karani is not a course, signal service, or open sign-up. Enrollment is invite-only. Nothing on the site is financial advice; futures trading carries substantial risk of loss.
 
 ## Articles
+- [How to Read a Candlestick Chart on ES](https://karanimarkets.com/posts/how-to-read-a-candlestick-chart-on-es.html): Learn how to read a candlestick chart on ES futures: what the open, high, low, and close actually show, and why single candles mislead.
 - [Sortino Ratio: Sharpe That Ignores Upside Swings](https://karanimarkets.com/posts/sortino-ratio-sharpe-that-ignores-upside-swings.html): The Sortino ratio measures risk-adjusted return using only downside volatility, unlike the Sharpe ratio, which penalizes all price swings equally.
 - [Prop Firm Challenge: Reading the Rules First](https://karanimarkets.com/posts/prop-firm-challenge-reading-the-rules-first.html): A prop firm challenge tests rule-following as much as profit. Learn how target, drawdown, and consistency rules work before you pay for one.
 - [How Are Futures Taxed? Section 1256 Basics](https://karanimarkets.com/posts/how-are-futures-taxed-section-1256-basics.html): How are futures taxed? A plain-English guide to Section 1256, the 60/40 blended rate, and year-end mark-to-market rules.
