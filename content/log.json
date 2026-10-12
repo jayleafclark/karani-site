@@ -598,5 +598,17 @@
     "read_time": "7 min read",
     "date": "2026-10-09",
     "url": "/posts/how-to-read-a-candlestick-chart-on-es.html"
+  },
+  {
+    "slug": "volume-profile-trading-where-price-traded",
+    "keyword": "volume profile trading",
+    "title": "Volume Profile Trading: Where Price Traded",
+    "category": "Systematic Strategy",
+    "kd": 1,
+    "sv": 260,
+    "excerpt": "Volume profile trading explained: what POC, value area, and volume nodes mean on an ES chart, and why they're reference points, not signals.",
+    "read_time": "7 min read",
+    "date": "2026-10-12",
+    "url": "/posts/volume-profile-trading-where-price-traded.html"
   }
 ]

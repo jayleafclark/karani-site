@@ -11,6 +11,7 @@
 Note: Karani is not a course, signal service, or open sign-up. Enrollment is invite-only. Nothing on the site is financial advice; futures trading carries substantial risk of loss.
 
 ## Articles
+- [Volume Profile Trading: Where Price Traded](https://karanimarkets.com/posts/volume-profile-trading-where-price-traded.html): Volume profile trading explained: what POC, value area, and volume nodes mean on an ES chart, and why they're reference points, not signals.
 - [How to Read a Candlestick Chart on ES](https://karanimarkets.com/posts/how-to-read-a-candlestick-chart-on-es.html): Learn how to read a candlestick chart on ES futures: what the open, high, low, and close actually show, and why single candles mislead.
 - [Sortino Ratio: Sharpe That Ignores Upside Swings](https://karanimarkets.com/posts/sortino-ratio-sharpe-that-ignores-upside-swings.html): The Sortino ratio measures risk-adjusted return using only downside volatility, unlike the Sharpe ratio, which penalizes all price swings equally.
 - [Prop Firm Challenge: Reading the Rules First](https://karanimarkets.com/posts/prop-firm-challenge-reading-the-rules-first.html): A prop firm challenge tests rule-following as much as profit. Learn how target, drawdown, and consistency rules work before you pay for one.
