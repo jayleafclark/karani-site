@@ -610,5 +610,17 @@
     "read_time": "7 min read",
     "date": "2026-10-12",
     "url": "/posts/volume-profile-trading-where-price-traded.html"
+  },
+  {
+    "slug": "nfp-and-es-the-first-friday-volatility",
+    "keyword": "nfp trading",
+    "title": "NFP and ES: The First-Friday Volatility",
+    "category": "ES Mechanics",
+    "kd": 1,
+    "sv": 260,
+    "excerpt": "NFP trading explained: how the 8:30 ET jobs report moves ES futures, why spreads widen, and where slippage does the damage.",
+    "read_time": "7 min read",
+    "date": "2026-10-14",
+    "url": "/posts/nfp-and-es-the-first-friday-volatility.html"
   }
 ]
