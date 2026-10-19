@@ -634,5 +634,17 @@
     "read_time": "8 min read",
     "date": "2026-10-16",
     "url": "/posts/best-futures-prop-firms-compared-on-rules.html"
+  },
+  {
+    "slug": "statistical-arbitrage-the-retail-reality",
+    "keyword": "statistical arbitrage",
+    "title": "Statistical Arbitrage: The Retail Reality",
+    "category": "Systematic Strategy",
+    "kd": 7,
+    "sv": 1000,
+    "excerpt": "What statistical arbitrage actually is, why it favors institutions, and what a retail trader would need to approximate it.",
+    "read_time": "7 min read",
+    "date": "2026-10-19",
+    "url": "/posts/statistical-arbitrage-the-retail-reality.html"
   }
 ]
