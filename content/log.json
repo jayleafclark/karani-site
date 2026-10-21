@@ -646,5 +646,17 @@
     "read_time": "7 min read",
     "date": "2026-10-19",
     "url": "/posts/statistical-arbitrage-the-retail-reality.html"
+  },
+  {
+    "slug": "what-is-a-stop-loss-order-types-and-uses",
+    "keyword": "what is a stop loss",
+    "title": "What Is a Stop-Loss Order? Types and Uses",
+    "category": "Glossary",
+    "kd": 18,
+    "sv": 3600,
+    "excerpt": "What is a stop-loss order? A plain explanation of stop-market vs stop-limit orders, where to place them, and why hard stops matter.",
+    "read_time": "7 min read",
+    "date": "2026-10-21",
+    "url": "/posts/what-is-a-stop-loss-order-types-and-uses.html"
   }
 ]
