@@ -11,6 +11,7 @@
 Note: Karani is not a course, signal service, or open sign-up. Enrollment is invite-only. Nothing on the site is financial advice; futures trading carries substantial risk of loss.
 
 ## Articles
+- [Risk-Reward Ratio and the Win Rate It Needs](https://karanimarkets.com/posts/risk-reward-ratio-and-the-win-rate-it-needs.html): Risk reward ratio sets the win rate a trade needs to break even: 1:2 needs 34%, 2:1 needs 67%. Here's the math.
 - [What Is a Stop-Loss Order? Types and Uses](https://karanimarkets.com/posts/what-is-a-stop-loss-order-types-and-uses.html): What is a stop-loss order? A plain explanation of stop-market vs stop-limit orders, where to place them, and why hard stops matter.
 - [Statistical Arbitrage: The Retail Reality](https://karanimarkets.com/posts/statistical-arbitrage-the-retail-reality.html): What statistical arbitrage actually is, why it favors institutions, and what a retail trader would need to approximate it.
 - [Best Futures Prop Firms Compared on Rules](https://karanimarkets.com/posts/best-futures-prop-firms-compared-on-rules.html): A guide to comparing the best futures prop firms by drawdown type, consistency rules, and payout terms, not just the sign-up price.

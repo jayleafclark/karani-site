@@ -658,5 +658,17 @@
     "read_time": "7 min read",
     "date": "2026-10-21",
     "url": "/posts/what-is-a-stop-loss-order-types-and-uses.html"
+  },
+  {
+    "slug": "risk-reward-ratio-and-the-win-rate-it-needs",
+    "keyword": "risk reward ratio",
+    "title": "Risk-Reward Ratio and the Win Rate It Needs",
+    "category": "Risk Management",
+    "kd": 9,
+    "sv": 1300,
+    "excerpt": "Risk reward ratio sets the win rate a trade needs to break even: 1:2 needs 34%, 2:1 needs 67%. Here's the math.",
+    "read_time": "7 min read",
+    "date": "2026-10-26",
+    "url": "/posts/risk-reward-ratio-and-the-win-rate-it-needs.html"
   }
 ]
