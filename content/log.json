@@ -670,5 +670,17 @@
     "read_time": "7 min read",
     "date": "2026-10-26",
     "url": "/posts/risk-reward-ratio-and-the-win-rate-it-needs.html"
+  },
+  {
+    "slug": "opening-range-breakout-on-es-the-setup",
+    "keyword": "opening range breakout strategy",
+    "title": "Opening Range Breakout on ES: The Setup",
+    "category": "Systematic Strategy",
+    "kd": 3,
+    "sv": 390,
+    "excerpt": "What the opening range breakout strategy is on ES futures: how the range is built, the long/short trigger, and the filter that cuts false breakouts.",
+    "read_time": "7 min read",
+    "date": "2026-10-28",
+    "url": "/posts/opening-range-breakout-on-es-the-setup.html"
   }
 ]

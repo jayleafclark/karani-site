@@ -11,6 +11,7 @@
 Note: Karani is not a course, signal service, or open sign-up. Enrollment is invite-only. Nothing on the site is financial advice; futures trading carries substantial risk of loss.
 
 ## Articles
+- [Opening Range Breakout on ES: The Setup](https://karanimarkets.com/posts/opening-range-breakout-on-es-the-setup.html): What the opening range breakout strategy is on ES futures: how the range is built, the long/short trigger, and the filter that cuts false breakouts.
 - [Risk-Reward Ratio and the Win Rate It Needs](https://karanimarkets.com/posts/risk-reward-ratio-and-the-win-rate-it-needs.html): Risk reward ratio sets the win rate a trade needs to break even: 1:2 needs 34%, 2:1 needs 67%. Here's the math.
 - [What Is a Stop-Loss Order? Types and Uses](https://karanimarkets.com/posts/what-is-a-stop-loss-order-types-and-uses.html): What is a stop-loss order? A plain explanation of stop-market vs stop-limit orders, where to place them, and why hard stops matter.
 - [Statistical Arbitrage: The Retail Reality](https://karanimarkets.com/posts/statistical-arbitrage-the-retail-reality.html): What statistical arbitrage actually is, why it favors institutions, and what a retail trader would need to approximate it.
