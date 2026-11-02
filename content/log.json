@@ -694,5 +694,17 @@
     "read_time": "7 min read",
     "date": "2026-10-30",
     "url": "/posts/contango-vs-backwardation-reading-the-curve.html"
+  },
+  {
+    "slug": "how-to-trade-futures-the-6-step-setup",
+    "keyword": "how to trade futures",
+    "title": "How to Trade Futures: The 6-Step Setup",
+    "category": "Getting Started",
+    "kd": 20,
+    "sv": 3600,
+    "excerpt": "How to trade futures in six steps: broker, platform, data feed, margin, order types, and paper trading before you fund a live account.",
+    "read_time": "7 min read",
+    "date": "2026-11-02",
+    "url": "/posts/how-to-trade-futures-the-6-step-setup.html"
   }
 ]
