@@ -706,5 +706,17 @@
     "read_time": "7 min read",
     "date": "2026-11-02",
     "url": "/posts/how-to-trade-futures-the-6-step-setup.html"
+  },
+  {
+    "slug": "swing-trading-futures-holding-overnight",
+    "keyword": "swing trading futures",
+    "title": "Swing Trading Futures: Holding Overnight",
+    "category": "Systematic Strategy",
+    "kd": 0,
+    "sv": 140,
+    "excerpt": "Swing trading futures means holding ES positions overnight. Here's how margin requirements jump and what gap risk actually looks like.",
+    "read_time": "7 min read",
+    "date": "2026-11-04",
+    "url": "/posts/swing-trading-futures-holding-overnight.html"
   }
 ]

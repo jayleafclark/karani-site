@@ -11,6 +11,7 @@
 Note: Karani is not a course, signal service, or open sign-up. Enrollment is invite-only. Nothing on the site is financial advice; futures trading carries substantial risk of loss.
 
 ## Articles
+- [Swing Trading Futures: Holding Overnight](https://karanimarkets.com/posts/swing-trading-futures-holding-overnight.html): Swing trading futures means holding ES positions overnight. Here's how margin requirements jump and what gap risk actually looks like.
 - [How to Trade Futures: The 6-Step Setup](https://karanimarkets.com/posts/how-to-trade-futures-the-6-step-setup.html): How to trade futures in six steps: broker, platform, data feed, margin, order types, and paper trading before you fund a live account.
 - [Contango vs Backwardation: Reading the Curve](https://karanimarkets.com/posts/contango-vs-backwardation-reading-the-curve.html): Contango vs backwardation explained: what causes each futures curve shape and how it affects cost of carry and rolling contracts.
 - [Opening Range Breakout on ES: The Setup](https://karanimarkets.com/posts/opening-range-breakout-on-es-the-setup.html): What the opening range breakout strategy is on ES futures: how the range is built, the long/short trigger, and the filter that cuts false breakouts.
