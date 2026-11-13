@@ -742,5 +742,17 @@
     "read_time": "7 min read",
     "date": "2026-11-11",
     "url": "/posts/apex-vs-topstep-drawdown-and-payout-differences.html"
+  },
+  {
+    "slug": "what-is-trailing-drawdown-the-one-way-ratchet",
+    "keyword": "what is trailing drawdown",
+    "title": "What Is Trailing Drawdown? The One-Way Ratchet",
+    "category": "Glossary",
+    "kd": 0,
+    "sv": 140,
+    "excerpt": "What is trailing drawdown? A floor that rises with your account's peak equity but never falls back, explained with a $10,000 example.",
+    "read_time": "6 min read",
+    "date": "2026-11-13",
+    "url": "/posts/what-is-trailing-drawdown-the-one-way-ratchet.html"
   }
 ]

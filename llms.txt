@@ -11,6 +11,7 @@
 Note: Karani is not a course, signal service, or open sign-up. Enrollment is invite-only. Nothing on the site is financial advice; futures trading carries substantial risk of loss.
 
 ## Articles
+- [What Is Trailing Drawdown? The One-Way Ratchet](https://karanimarkets.com/posts/what-is-trailing-drawdown-the-one-way-ratchet.html): What is trailing drawdown? A floor that rises with your account's peak equity but never falls back, explained with a $10,000 example.
 - [Apex vs Topstep: Drawdown and Payout Differences](https://karanimarkets.com/posts/apex-vs-topstep-drawdown-and-payout-differences.html): Apex vs Topstep compared: evaluation type, trailing drawdown mechanics, and profit split rules, explained so you can match the program to how you trade.
 - [Topstep vs Apex: Which Rules Fit You](https://karanimarkets.com/posts/topstep-vs-apex-which-rules-fit-you.html): Topstep vs Apex compared: daily-loss limits, trailing drawdown rules, and cost, so you can match the rules to your trading style.
 - [Swing Trading Futures: Holding Overnight](https://karanimarkets.com/posts/swing-trading-futures-holding-overnight.html): Swing trading futures means holding ES positions overnight. Here's how margin requirements jump and what gap risk actually looks like.
