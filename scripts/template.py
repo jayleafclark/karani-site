@@ -80,12 +80,14 @@ ORG_LD = '<script type="application/ld+json">' + _json.dumps({
   "sameAs": [],
 }, ensure_ascii=False) + '</script>'
 
+
+CF_BEACON = '''<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"0e47cd5e23254e46878e5feb2967feba"}'></script>'''
 COMMONMETA = ('<link rel="icon" type="image/png" href="/assets/favicon.png">'
   '<link rel="apple-touch-icon" href="/assets/favicon.png">'
   '<meta name="theme-color" content="#557790">'
   '<meta property="og:site_name" content="Karani">'
   '<meta name="twitter:card" content="summary_large_image">'
-  + ORG_LD)
+  + ORG_LD + CF_BEACON)
 
 def load_site():
     h = open(INDEX, encoding="utf-8").read()
