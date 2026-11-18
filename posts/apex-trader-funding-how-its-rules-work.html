@@ -778,7 +778,7 @@ document.addEventListener('submit',function(e){
   if(err){err.hidden=true;err.textContent='';}
   var fd=new FormData(f);
   var name=(fd.get('name')||'').toString().trim(),email=(fd.get('email')||'').toString().trim(),msg=(fd.get('msg')||'').toString().trim();
-  var payload={access_key:W3F_KEY,subject:W3F_SUBJECT[kind]||'Karani website',
+  var payload={access_key:W3F_KEY,page:location.href,referrer:(document.referrer||'(direct / none)'),subject:W3F_SUBJECT[kind]||'Karani website',
     from_name:name+' via Karani '+(kind==='signup'?'access request':'contact form'),
     name:name,email:email,message:msg||'(no message)'};
   fetch(W3F_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload)})
