@@ -11,6 +11,7 @@
 Note: Karani is not a course, signal service, or open sign-up. Enrollment is invite-only. Nothing on the site is financial advice; futures trading carries substantial risk of loss.
 
 ## Articles
+- [Section 1256 Contracts: The 60/40 Tax Treatment](https://karanimarkets.com/posts/section-1256-contracts-the-60-40-tax-treatment.html): Section 1256 contracts explained: which futures and options qualify, the mark-to-market rule, and how the 60/40 tax split actually works.
 - [Rithmic vs Tradovate: Speed vs Simplicity](https://karanimarkets.com/posts/rithmic-vs-tradovate-speed-vs-simplicity.html): Rithmic vs Tradovate compared: order routing speed, setup simplicity, and which fits scalpers versus part-time futures traders.
 - [What Is Trailing Drawdown? The One-Way Ratchet](https://karanimarkets.com/posts/what-is-trailing-drawdown-the-one-way-ratchet.html): What is trailing drawdown? A floor that rises with your account's peak equity but never falls back, explained with a $10,000 example.
 - [Apex vs Topstep: Drawdown and Payout Differences](https://karanimarkets.com/posts/apex-vs-topstep-drawdown-and-payout-differences.html): Apex vs Topstep compared: evaluation type, trailing drawdown mechanics, and profit split rules, explained so you can match the program to how you trade.
